@@ -78,6 +78,7 @@ public class RescueMinigame : MonoBehaviour
             float nuevoAncho = Mathf.Max(zonaVerde.sizeDelta.x - greenZoneShrinkAmount, minGreenZoneWidth);
             zonaVerde.sizeDelta = new Vector2(nuevoAncho, zonaVerde.sizeDelta.y);
             velocidad += aumentoVelocidad;
+            GameManager.Instance.ciudadanosRescatados++;
         }
         else
         {

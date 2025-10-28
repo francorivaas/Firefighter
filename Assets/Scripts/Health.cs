@@ -22,6 +22,7 @@ public class Health : MonoBehaviour
         {
             Destroy(gameObject);
             timer.EnableResetButton();
+            GameManager.Instance.ReiniciarDatos();
         }    
     }
 

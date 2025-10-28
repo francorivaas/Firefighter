@@ -66,6 +66,7 @@ public class CountdownTimer : MonoBehaviour
 
     public void ResetScene()
     {
+        GameManager.Instance.ReiniciarDatos();
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
     }
