@@ -15,6 +15,8 @@ public class CountdownTimer : MonoBehaviour
     private float currentTime;
     private bool timerActive = true;
 
+    public GameObject player;
+
     void Start()
     {
         currentTime = startTime;
@@ -45,14 +47,21 @@ public class CountdownTimer : MonoBehaviour
             currentTime = 0f;
             timerActive = false;
 
+            Destroy(player);
+
             // Mostrar botón de reset
             if (resetButton != null)
             {
-                resetButton.gameObject.SetActive(true);
-                resetButton.onClick.RemoveAllListeners();
-                resetButton.onClick.AddListener(ResetScene);
+                EnableResetButton();
             }
         }
+    }
+
+    public void EnableResetButton()
+    {
+        resetButton.gameObject.SetActive(true);
+        resetButton.onClick.RemoveAllListeners();
+        resetButton.onClick.AddListener(ResetScene);
     }
 
     public void ResetScene()

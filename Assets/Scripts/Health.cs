@@ -21,7 +21,7 @@ public class Health : MonoBehaviour
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
-            timer.ResetScene();
+            timer.EnableResetButton();
         }    
     }
 

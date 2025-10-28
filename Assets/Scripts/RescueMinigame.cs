@@ -8,7 +8,6 @@ public class RescueMinigame : MonoBehaviour
     public RectTransform barra;
     public RectTransform zonaVerde;
     public RectTransform aguja;
-    public Text resultadoTexto;
 
     [Header("Parámetros de juego")]
     public float velocidad = 200f;
@@ -33,7 +32,6 @@ public class RescueMinigame : MonoBehaviour
     {
         citizens = 0;
         posicionInicialAguja = aguja.localPosition;
-        resultadoTexto.text = "";
 
         initialGreenZoneWidth = zonaVerde.sizeDelta.x; // guardamos tamaño inicial
     }
@@ -75,8 +73,6 @@ public class RescueMinigame : MonoBehaviour
         if (xAguja >= xVerdeMin && xAguja <= xVerdeMax)
         {
             citizens++;
-            resultadoTexto.color = Color.green;
-            resultadoTexto.text = "✅ El ciudadano vive";
 
             // Reducir tamaño de zona verde (más difícil)
             float nuevoAncho = Mathf.Max(zonaVerde.sizeDelta.x - greenZoneShrinkAmount, minGreenZoneWidth);
@@ -85,8 +81,6 @@ public class RescueMinigame : MonoBehaviour
         }
         else
         {
-            resultadoTexto.color = Color.red;
-            resultadoTexto.text = "❌ El ciudadano muere";
             // NO cambia dificultad
         }
 
@@ -98,7 +92,6 @@ public class RescueMinigame : MonoBehaviour
     {
         yield return new WaitForSeconds(tiempoReinicio);
 
-        resultadoTexto.text = "";
         aguja.localPosition = posicionInicialAguja;
         moviendoDerecha = Random.value > 0.5f;
         puedeJugar = true;
