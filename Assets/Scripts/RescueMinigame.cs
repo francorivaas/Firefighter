@@ -10,15 +10,19 @@ public class RescueMinigame : MonoBehaviour
     public RectTransform aguja;
     public Text resultadoTexto;
 
-    [Header("Parámetros")]
+    [Header("Parámetros de juego")]
     public float velocidad = 200f;
     public float tiempoReinicio = 1.5f;
+
+    [Header("Dificultad dinámica")]
+    public float greenZoneShrinkAmount = 20f; // cuánto se reduce por rescate exitoso
+    public float minGreenZoneWidth = 40f;     // tamaño mínimo de la zona verde
+    private float initialGreenZoneWidth;
 
     [HideInInspector] public Citizen currentCitizen;
 
     private bool moviendoDerecha = true;
     private bool puedeJugar = true;
-
     private Vector3 posicionInicialAguja;
 
     public Text rescuedCitizens;
@@ -29,6 +33,8 @@ public class RescueMinigame : MonoBehaviour
         citizens = 0;
         posicionInicialAguja = aguja.localPosition;
         resultadoTexto.text = "";
+
+        initialGreenZoneWidth = zonaVerde.sizeDelta.x; // guardamos tamaño inicial
     }
 
     void Update()
@@ -41,8 +47,6 @@ public class RescueMinigame : MonoBehaviour
         {
             VerificarResultado();
         }
-
-        rescuedCitizens.text = "Ciudadanos:" + citizens;
     }
 
     void MoverAguja()
@@ -69,10 +73,17 @@ public class RescueMinigame : MonoBehaviour
         {
             citizens++;
             resultadoTexto.color = Color.green;
+            resultadoTexto.text = "✅ El ciudadano vive";
+
+            // Reducir tamaño de zona verde (más difícil)
+            float nuevoAncho = Mathf.Max(zonaVerde.sizeDelta.x - greenZoneShrinkAmount, minGreenZoneWidth);
+            zonaVerde.sizeDelta = new Vector2(nuevoAncho, zonaVerde.sizeDelta.y);
         }
         else
         {
             resultadoTexto.color = Color.red;
+            resultadoTexto.text = "❌ El ciudadano muere";
+            // NO cambia dificultad
         }
 
         puedeJugar = false;
@@ -88,7 +99,6 @@ public class RescueMinigame : MonoBehaviour
         moviendoDerecha = Random.value > 0.5f;
         puedeJugar = true;
 
-        // 👇 Se avisa al ciudadano actual que terminó el rescate
         if (currentCitizen != null)
         {
             currentCitizen.EndRescue();

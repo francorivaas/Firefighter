@@ -526,6 +526,8 @@ MonoBehaviour:
   resultadoTexto: {fileID: 2135857171}
   velocidad: 200
   tiempoReinicio: 1.5
+  greenZoneShrinkAmount: 35
+  minGreenZoneWidth: 60
   currentCitizen: {fileID: 0}
   rescuedCitizens: {fileID: 1956639293}
   citizens: 0
@@ -1036,6 +1038,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Citizen
   rescueMinigame: {fileID: 81963509}
   rescueBar: {fileID: 667762316}
+  interactionText: {fileID: 946950222}
 --- !u!58 &325825405
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1559,6 +1562,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Citizen
   rescueMinigame: {fileID: 81963509}
   rescueBar: {fileID: 667762316}
+  interactionText: {fileID: 946950222}
 --- !u!4 &428674688 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4177472097151577813, guid: 47cc0a926c7842440a27703460966733, type: 3}
@@ -2531,6 +2535,85 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &946950220
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 946950221}
+  - component: {fileID: 946950223}
+  - component: {fileID: 946950222}
+  m_Layer: 5
+  m_Name: PressE
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &946950221
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946950220}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2024071215}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &946950222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946950220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Text
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 108
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 164
+    m_Alignment: 7
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Press E to rescue
+--- !u!222 &946950223
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946950220}
+  m_CullTransparentMesh: 1
 --- !u!1 &961519193
 GameObject:
   m_ObjectHideFlags: 0
@@ -3470,7 +3553,7 @@ MonoBehaviour:
   onHealthChanged:
     m_PersistentCalls:
       m_Calls: []
-  timer: {fileID: 0}
+  timer: {fileID: 961519194}
 --- !u!1 &1461673661
 GameObject:
   m_ObjectHideFlags: 0
@@ -9218,6 +9301,7 @@ RectTransform:
   - {fileID: 667762317}
   - {fileID: 2135857170}
   - {fileID: 1956639292}
+  - {fileID: 946950221}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -9395,6 +9479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Citizen
   rescueMinigame: {fileID: 81963509}
   rescueBar: {fileID: 667762316}
+  interactionText: {fileID: 946950222}
 --- !u!58 &2104521429
 CircleCollider2D:
   m_ObjectHideFlags: 0
