@@ -12,6 +12,7 @@ public class RescueMinigame : MonoBehaviour
 
     [Header("Parámetros de juego")]
     public float velocidad = 200f;
+    public float aumentoVelocidad = 100f;
     public float tiempoReinicio = 1.5f;
 
     [Header("Dificultad dinámica")]
@@ -47,6 +48,8 @@ public class RescueMinigame : MonoBehaviour
         {
             VerificarResultado();
         }
+
+        rescuedCitizens.text = "Ciudadanos: " + citizens;
     }
 
     void MoverAguja()
@@ -78,6 +81,7 @@ public class RescueMinigame : MonoBehaviour
             // Reducir tamaño de zona verde (más difícil)
             float nuevoAncho = Mathf.Max(zonaVerde.sizeDelta.x - greenZoneShrinkAmount, minGreenZoneWidth);
             zonaVerde.sizeDelta = new Vector2(nuevoAncho, zonaVerde.sizeDelta.y);
+            velocidad += aumentoVelocidad;
         }
         else
         {

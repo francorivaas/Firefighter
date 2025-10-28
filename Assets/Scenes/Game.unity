@@ -507,7 +507,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &81963509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -525,9 +525,10 @@ MonoBehaviour:
   aguja: {fileID: 1461673662}
   resultadoTexto: {fileID: 2135857171}
   velocidad: 200
+  aumentoVelocidad: 100
   tiempoReinicio: 1.5
-  greenZoneShrinkAmount: 35
-  minGreenZoneWidth: 60
+  greenZoneShrinkAmount: 20
+  minGreenZoneWidth: 40
   currentCitizen: {fileID: 0}
   rescuedCitizens: {fileID: 1956639293}
   citizens: 0
@@ -4184,7 +4185,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 324.4022, y: 94.1418}
+  m_SizeDelta: {x: 495.9009, y: 125.9916}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1956639293
 MonoBehaviour:
