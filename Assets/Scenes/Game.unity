@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 56631550}
   - component: {fileID: 56631549}
   m_Layer: 0
-  m_Name: CinemachineCamera
+  m_Name: CAMERA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -486,7 +486,7 @@ GameObject:
   - component: {fileID: 81963510}
   - component: {fileID: 81963509}
   m_Layer: 0
-  m_Name: RescueMinigame
+  m_Name: RESCUE MINIGAME
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -677,7 +677,7 @@ GameObject:
   - component: {fileID: 104615841}
   - component: {fileID: 104615840}
   m_Layer: 0
-  m_Name: Fire Spawner
+  m_Name: XTRA FIRE SPAWNER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1776,7 +1776,7 @@ GameObject:
   m_Component:
   - component: {fileID: 564162877}
   m_Layer: 0
-  m_Name: Citizens
+  m_Name: CITIZENS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1796,6 +1796,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 325825407}
+  - {fileID: 1099101892}
+  - {fileID: 1923766082}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &588191163
@@ -2094,9 +2096,9 @@ GameObject:
   - component: {fileID: 630535210}
   - component: {fileID: 630535209}
   m_Layer: 0
-  m_Name: Exit
+  m_Name: EXIT
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2310,7 +2312,7 @@ GameObject:
   - component: {fileID: 667762319}
   - component: {fileID: 667762318}
   m_Layer: 5
-  m_Name: Minigame bar 1
+  m_Name: Minigame bar Red part
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2387,7 +2389,7 @@ GameObject:
   - component: {fileID: 676683762}
   - component: {fileID: 676683761}
   m_Layer: 5
-  m_Name: Timer
+  m_Name: Countdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3325,7 +3327,7 @@ GameObject:
   - component: {fileID: 961519195}
   - component: {fileID: 961519194}
   m_Layer: 0
-  m_Name: Timer
+  m_Name: TIMER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3544,7 +3546,7 @@ GameObject:
   - component: {fileID: 1009021662}
   - component: {fileID: 1009021661}
   m_Layer: 0
-  m_Name: Game Manager
+  m_Name: GAME MANAGER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3707,7 +3709,7 @@ GameObject:
   - component: {fileID: 1082974866}
   - component: {fileID: 1082974867}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Manguera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3855,7 +3857,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 564162877}
     m_Modifications:
     - target: {fileID: 395978660780781070, guid: bd93a81d96362544d99e4b1fb8204367, type: 3}
       propertyPath: m_Name
@@ -3879,7 +3881,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6186416286030763448, guid: bd93a81d96362544d99e4b1fb8204367, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.997604
+      value: -8.122396
       objectReference: {fileID: 0}
     - target: {fileID: 6186416286030763448, guid: bd93a81d96362544d99e4b1fb8204367, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3918,6 +3920,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd93a81d96362544d99e4b1fb8204367, type: 3}
+--- !u!4 &1099101892 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6186416286030763448, guid: bd93a81d96362544d99e4b1fb8204367, type: 3}
+  m_PrefabInstance: {fileID: 1099101891}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1124777162
 GameObject:
   m_ObjectHideFlags: 0
@@ -4708,7 +4715,7 @@ GameObject:
   - component: {fileID: 1266326682}
   - component: {fileID: 1266326681}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Green part
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5164,7 +5171,7 @@ GameObject:
   - component: {fileID: 1397027303}
   - component: {fileID: 1397027302}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: BACKGROUND MUSIC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5355,7 +5362,7 @@ GameObject:
   - component: {fileID: 1459027716}
   - component: {fileID: 1459027717}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PLAYER
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5572,7 +5579,7 @@ GameObject:
   - component: {fileID: 1461673664}
   - component: {fileID: 1461673663}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Needle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6090,7 +6097,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1596165983}
   m_Layer: 0
-  m_Name: Fire
+  m_Name: FIRE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6464,7 +6471,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1794866277}
   m_Layer: 0
-  m_Name: Walls
+  m_Name: LEVEL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6835,7 +6842,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 564162877}
     m_Modifications:
     - target: {fileID: 395978660780781070, guid: bd93a81d96362544d99e4b1fb8204367, type: 3}
       propertyPath: m_Name
@@ -6859,7 +6866,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6186416286030763448, guid: bd93a81d96362544d99e4b1fb8204367, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 35.7
+      value: 9.58
       objectReference: {fileID: 0}
     - target: {fileID: 6186416286030763448, guid: bd93a81d96362544d99e4b1fb8204367, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6898,6 +6905,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd93a81d96362544d99e4b1fb8204367, type: 3}
+--- !u!4 &1923766082 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6186416286030763448, guid: bd93a81d96362544d99e4b1fb8204367, type: 3}
+  m_PrefabInstance: {fileID: 1923766081}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1928126948
 GameObject:
   m_ObjectHideFlags: 0
@@ -12197,7 +12209,7 @@ GameObject:
   - component: {fileID: 2024071213}
   - component: {fileID: 2024071212}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: CANVAS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12544,7 +12556,6 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 1459027714}
   - {fileID: 1794866277}
-  - {fileID: 1596165983}
   - {fileID: 2024071215}
   - {fileID: 1022210706}
   - {fileID: 961519195}
@@ -12554,6 +12565,5 @@ SceneRoots:
   - {fileID: 1009021662}
   - {fileID: 1397027303}
   - {fileID: 104615841}
+  - {fileID: 1596165983}
   - {fileID: 630535208}
-  - {fileID: 1099101891}
-  - {fileID: 1923766081}
