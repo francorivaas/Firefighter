@@ -5,11 +5,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public int ciudadanosRescatados = 0;
+    public int rescuedCitizens = 0;
+    public int totalCitizens = 0;
     public int minCitizens = 0;
     public float tiempoTotal = 0f;
 
-    public Text rescuedCitizens;
+    public Text rescuedCitizensText;
 
     private void Awake()
     {
@@ -33,17 +34,22 @@ public class GameManager : MonoBehaviour
             tiempoTotal += Time.deltaTime;
         }
 
-        if (ciudadanosRescatados >= minCitizens)
+        if (rescuedCitizens >= minCitizens)
         {
-            print("victoria");
+            print("ya puedes ir a la salida");
         }
 
-        rescuedCitizens.text = "Ciudadanos: " + GameManager.Instance.ciudadanosRescatados + "/" + GameManager.Instance.minCitizens;
+        else if (totalCitizens < minCitizens)
+        {
+            print("derrota");
+        }
+
+        rescuedCitizensText.text = "Ciudadanos: " + GameManager.Instance.rescuedCitizens + "/" + GameManager.Instance.minCitizens;
     }
 
     public void ReiniciarDatos()
     {
-        ciudadanosRescatados = 0;
+        rescuedCitizens = 0;
         tiempoTotal = 0f;
     }
 }

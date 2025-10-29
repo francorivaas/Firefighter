@@ -25,7 +25,7 @@ public class RescueMinigame : MonoBehaviour
     private bool puedeJugar = true;
     private Vector3 posicionInicialAguja;
 
-    public Text rescuedCitizens;
+    
     public int citizens;
 
     void Start()
@@ -47,7 +47,7 @@ public class RescueMinigame : MonoBehaviour
             VerificarResultado();
         }
 
-        rescuedCitizens.text = "Ciudadanos: " + GameManager.Instance.ciudadanosRescatados + "/" + GameManager.Instance.minCitizens;
+        
     }
 
     void MoverAguja()
@@ -78,11 +78,12 @@ public class RescueMinigame : MonoBehaviour
             float nuevoAncho = Mathf.Max(zonaVerde.sizeDelta.x - greenZoneShrinkAmount, minGreenZoneWidth);
             zonaVerde.sizeDelta = new Vector2(nuevoAncho, zonaVerde.sizeDelta.y);
             velocidad += aumentoVelocidad;
-            GameManager.Instance.ciudadanosRescatados++;
+            GameManager.Instance.rescuedCitizens++;
+            GameManager.Instance.totalCitizens--;
         }
         else
         {
-            // NO cambia dificultad
+            GameManager.Instance.totalCitizens--;
         }
 
         puedeJugar = false;

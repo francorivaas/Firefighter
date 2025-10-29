@@ -42,12 +42,10 @@ public class FirefighterPlayer : MonoBehaviour
 
         if (hit.collider != null)
         {
-            print("hit fire");
             FireTarget fire = hit.collider.GetComponent<FireTarget>();
             if (fire != null)
             {
                 fire.ApplyWater(waterPower);
-                print("apply water");
             }
         }
 
