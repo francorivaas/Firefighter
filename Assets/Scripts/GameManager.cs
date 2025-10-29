@@ -1,11 +1,15 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
     public int ciudadanosRescatados = 0;
+    public int minCitizens = 0;
     public float tiempoTotal = 0f;
+
+    public Text rescuedCitizens;
 
     private void Awake()
     {
@@ -28,6 +32,13 @@ public class GameManager : MonoBehaviour
         {
             tiempoTotal += Time.deltaTime;
         }
+
+        if (ciudadanosRescatados >= minCitizens)
+        {
+            print("victoria");
+        }
+
+        rescuedCitizens.text = "Ciudadanos: " + GameManager.Instance.ciudadanosRescatados + "/" + GameManager.Instance.minCitizens;
     }
 
     public void ReiniciarDatos()

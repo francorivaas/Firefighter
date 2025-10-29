@@ -85,7 +85,22 @@ public class FireTarget : MonoBehaviour
         {
             if (canDamage)
             {
-                player.TakeDamage(10);
+                player.TakeDamage(damage);
+                canDamage = false;
+                canCount = true;
+                currentTimeToDamage = 0;
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Health player = collision.gameObject.GetComponent<Health>();
+        if (player != null)
+        {
+            if (canDamage)
+            {
+                player.TakeDamage(damage);
                 canDamage = false;
                 canCount = true;
                 currentTimeToDamage = 0;

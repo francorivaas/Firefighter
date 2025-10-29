@@ -7,7 +7,9 @@ public class VictoryTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(1);
+            if (GameManager.Instance.ciudadanosRescatados >= GameManager.Instance.minCitizens)
+                SceneManager.LoadScene(1);
+            else print("no rescataste a nadie logi");
         }
     }
 }

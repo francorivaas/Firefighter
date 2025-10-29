@@ -31,6 +31,7 @@ public class Health : MonoBehaviour
         currentHealth -= amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         onHealthChanged.Invoke(currentHealth, maxHealth);
+        print("receiving damage");
     }
 
     public void Heal(float amount)

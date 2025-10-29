@@ -47,7 +47,7 @@ public class RescueMinigame : MonoBehaviour
             VerificarResultado();
         }
 
-        rescuedCitizens.text = "Ciudadanos: " + citizens;
+        rescuedCitizens.text = "Ciudadanos: " + GameManager.Instance.ciudadanosRescatados + "/" + GameManager.Instance.minCitizens;
     }
 
     void MoverAguja()
