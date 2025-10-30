@@ -47,23 +47,16 @@ public class FireTarget : MonoBehaviour
     {
         isExtinguished = true;
         currentExtinguishProgress = 0f;
-
-        //sr.color = Color.gray;
-        // Desactivar colisiones si querés
-        //GetComponent<SpriteRenderer>().enabled = false;
         Animator animator = GetComponent<Animator>();
         if (animator != null)
             animator.SetBool("Extinguish", true);
         GetComponent<Collider2D>().enabled = false;
-        // Volver a encender después de un tiempo
         Invoke(nameof(Reignite), reigniteDelay);
     }
 
     void Reignite()
     {
         isExtinguished = false;
-        //sr.color = Color.red;
-        //GetComponent<SpriteRenderer>().enabled = true;
         Animator animator = GetComponent<Animator>();
         if (animator != null)
             animator.SetBool("Extinguish", false);
@@ -76,9 +69,7 @@ public class FireTarget : MonoBehaviour
         {
             currentTimeToDamage += Time.deltaTime;
             if (currentTimeToDamage >= timeToDamage)
-            {
                 canDamage = true;
-            }
         }
     }
 
