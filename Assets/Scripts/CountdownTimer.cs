@@ -46,29 +46,29 @@ public class CountdownTimer : MonoBehaviour
         {
             currentTime = 0f;
             timerActive = false;
-
+            SceneManager.LoadScene(2);
             Destroy(player);
 
-            // Mostrar botón de reset
-            if (resetButton != null)
-            {
-                EnableResetButton();
-            }
+            //// Mostrar botón de reset
+            //if (resetButton != null)
+            //{
+            //    EnableResetButton();
+            //}
         }
     }
 
-    public void EnableResetButton()
-    {
-        resetButton.gameObject.SetActive(true);
-        resetButton.onClick.RemoveAllListeners();
-        resetButton.onClick.AddListener(ResetScene);
-    }
+    //public void EnableResetButton()
+    //{
+    //    resetButton.gameObject.SetActive(true);
+    //    resetButton.onClick.RemoveAllListeners();
+    //    resetButton.onClick.AddListener(ResetScene);
+    //}
 
-    public void ResetScene()
-    {
-        GameManager.Instance.ReiniciarDatos();
-        Scene currentScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(currentScene.name);
-    }
+    //public void ResetScene()
+    //{
+    //    GameManager.Instance.ReiniciarDatos();
+    //    Scene currentScene = SceneManager.GetActiveScene();
+    //    SceneManager.LoadScene(currentScene.name);
+    //}
 }
 

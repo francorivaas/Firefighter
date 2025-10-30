@@ -40,7 +40,6 @@ public class FireTarget : MonoBehaviour
         if (currentExtinguishProgress >= extinguishTime)
         {
             Extinguish();
-            print("lol");
         }
     }
 
@@ -51,8 +50,10 @@ public class FireTarget : MonoBehaviour
 
         //sr.color = Color.gray;
         // Desactivar colisiones si querés
-        GetComponent<SpriteRenderer>().enabled = false;
-        print("lol");
+        //GetComponent<SpriteRenderer>().enabled = false;
+        Animator animator = GetComponent<Animator>();
+        if (animator != null)
+            animator.SetBool("Extinguish", true);
         GetComponent<Collider2D>().enabled = false;
         // Volver a encender después de un tiempo
         Invoke(nameof(Reignite), reigniteDelay);
@@ -62,7 +63,10 @@ public class FireTarget : MonoBehaviour
     {
         isExtinguished = false;
         //sr.color = Color.red;
-        GetComponent<SpriteRenderer>().enabled = true;
+        //GetComponent<SpriteRenderer>().enabled = true;
+        Animator animator = GetComponent<Animator>();
+        if (animator != null)
+            animator.SetBool("Extinguish", false);
         GetComponent<Collider2D>().enabled = true;
     }
 

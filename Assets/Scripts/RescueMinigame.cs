@@ -79,11 +79,10 @@ public class RescueMinigame : MonoBehaviour
             zonaVerde.sizeDelta = new Vector2(nuevoAncho, zonaVerde.sizeDelta.y);
             velocidad += aumentoVelocidad;
             GameManager.Instance.rescuedCitizens++;
-            GameManager.Instance.totalCitizens--;
         }
         else
         {
-            GameManager.Instance.totalCitizens--;
+            GameManager.Instance.deadCitizens++;
         }
 
         puedeJugar = false;

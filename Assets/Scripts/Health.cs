@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 
 public class Health : MonoBehaviour
@@ -21,8 +22,9 @@ public class Health : MonoBehaviour
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
-            timer.EnableResetButton();
+            
             GameManager.Instance.ReiniciarDatos();
+            SceneManager.LoadScene(2);
         }    
     }
 
@@ -34,10 +36,10 @@ public class Health : MonoBehaviour
         print("receiving damage");
     }
 
-    public void Heal(float amount)
-    {
-        currentHealth += amount;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        onHealthChanged.Invoke(currentHealth, maxHealth);
-    }
+    //public void Heal(float amount)
+    //{
+    //    currentHealth += amount;
+    //    currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+    //    onHealthChanged.Invoke(currentHealth, maxHealth);
+    //}
 }

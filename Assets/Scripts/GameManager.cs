@@ -1,20 +1,25 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public int rescuedCitizens = 0;
-    public int totalCitizens = 0;
-    public int minCitizens = 0;
-    public float tiempoTotal = 0f;
+    [Header("Datos del progreso")]
+    public int rescuedCitizens = 0;   // Cuántos fueron rescatados
+    public int totalCitizens = 0;     // Cuántos había en total
+    public int minCitizens = 0;       // Cuántos se necesitan rescatar para ganar
+    public int deadCitizens = 0;      // Cuántos murieron
 
+    [Header("Tiempo total")]
+    public float totalTime = 0f;
+
+    [Header("UI")]
     public Text rescuedCitizensText;
 
     private void Awake()
     {
-        // Hacer que el GameManager no se destruya al cambiar de escena
         if (Instance == null)
         {
             Instance = this;
@@ -28,28 +33,51 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        // Aumentar el tiempo solo si estamos en el nivel (no en la pantalla de victoria)
-        if (!UnityEngine.SceneManagement.SceneManager.GetActiveScene().name.Contains("Victoria"))
+        // Aumenta el tiempo solo si no estás en la escena de victoria
+        if (!SceneManager.GetActiveScene().name.Contains("Victoria"))
         {
-            tiempoTotal += Time.deltaTime;
+            totalTime += Time.deltaTime;
         }
 
+        // Si alcanzó la cantidad mínima, puede salir
         if (rescuedCitizens >= minCitizens)
         {
-            print("ya puedes ir a la salida");
+            print("✅ Ya puedes ir a la salida para completar el nivel");
         }
 
-        else if (totalCitizens < minCitizens)
+        // 🔥 NUEVA LÓGICA DE DERROTA 🔥
+        // Si el número de ciudadanos restantes vivos no alcanza para llegar al mínimo → derrota
+        int remainingCitizens = totalCitizens - (rescuedCitizens + deadCitizens);
+        if (rescuedCitizens + remainingCitizens < minCitizens)
         {
-            print("derrota");
+            print("❌ Ya no puedes alcanzar el mínimo. Derrota.");
+            SceneManager.LoadScene(2); // o el nombre que uses para la escena de derrota
         }
 
-        rescuedCitizensText.text = "Ciudadanos: " + GameManager.Instance.rescuedCitizens + "/" + GameManager.Instance.minCitizens;
+        // Actualizar UI
+        if (rescuedCitizensText != null)
+        {
+            rescuedCitizensText.text = "Ciudadanos: " + rescuedCitizens + "/" + minCitizens;
+        }
     }
 
+    // Llamá a este método cuando un ciudadano sea rescatado
+    public void CitizenRescued()
+    {
+        rescuedCitizens++;
+    }
+
+    // Llamá a este método cuando un ciudadano muera
+    public void CitizenDead()
+    {
+        deadCitizens++;
+    }
+
+    // Reiniciar datos al volver a jugar
     public void ReiniciarDatos()
     {
         rescuedCitizens = 0;
-        tiempoTotal = 0f;
+        deadCitizens = 0;
+        totalTime = 0f;
     }
 }

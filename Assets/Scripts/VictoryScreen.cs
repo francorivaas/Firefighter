@@ -11,7 +11,7 @@ public class VictoryScreen : MonoBehaviour
     private void Start()
     {
         int ciudadanos = GameManager.Instance.rescuedCitizens;
-        float tiempo = GameManager.Instance.tiempoTotal;
+        float tiempo = GameManager.Instance.totalTime;
 
         ciudadanosText.text = "Ciudadanos rescatados: " + ciudadanos;
 
