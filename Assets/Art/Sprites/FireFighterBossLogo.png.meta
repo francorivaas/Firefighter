@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 08716acc235bdc04fa21fbbe8bd39be9
+guid: 03430d3b24325674a8291d7cdbb028e6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1098286324429101383
-    second: Fire_0
+      213: -8642384180394793030
+    second: FireFighterBossLogo_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 500
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fire_0
+      name: FireFighterBossLogo_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 482
-        height: 594
+        x: 1
+        y: 5
+        width: 63
+        height: 59
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7491445d795ed3f00800000000000000
-      internalID: 1098286324429101383
+      spriteID: ab7ec139065101880800000000000000
+      internalID: -8642384180394793030
       vertices: []
       indices: 
       edges: []
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Fire_0: 1098286324429101383
+      FireFighterBossLogo_0: -8642384180394793030
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
