@@ -1,4 +1,3 @@
-// FireTarget.cs
 using UnityEngine;
 
 public class FireTarget : MonoBehaviour
@@ -14,10 +13,10 @@ public class FireTarget : MonoBehaviour
 
     public float timeToDamage;
     public float currentTimeToDamage;
+    public float damage;
+    
     public bool canCount;
     public bool canDamage;
-
-    public float damage;
 
     void Awake()
     {

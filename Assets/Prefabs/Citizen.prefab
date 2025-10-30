@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4242441198974168519}
   - component: {fileID: 291337049436454764}
   - component: {fileID: 478528766401478182}
+  - component: {fileID: 5871748207777652637}
   m_Layer: 0
   m_Name: Citizen
   m_TagString: Untagged
@@ -80,8 +81,8 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_SortingOrder: 5
+  m_Sprite: {fileID: -991257273092804640, guid: 6181a3ad8804c4e48a729a4ffcc848f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -126,8 +127,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.008341789, y: 0}
-  m_Radius: 1.2090464
+  m_Offset: {x: -0.071936846, y: 0.00000011920929}
+  m_Radius: 1.7126135
 --- !u!114 &478528766401478182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,3 +144,25 @@ MonoBehaviour:
   rescueMinigame: {fileID: 0}
   rescueBar: {fileID: 0}
   interactionText: {fileID: 0}
+--- !u!95 &5871748207777652637
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395978660780781070}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 14cd569d56c12be499b6dc054de66560, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -109,9 +109,9 @@ MonoBehaviour:
   reigniteDelay: 15
   timeToDamage: 2
   currentTimeToDamage: 0
+  damage: 10
   canCount: 0
   canDamage: 0
-  damage: 10
 --- !u!70 &311142004811617119
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
