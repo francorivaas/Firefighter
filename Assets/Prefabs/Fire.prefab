@@ -112,6 +112,8 @@ MonoBehaviour:
   damage: 10
   canCount: 0
   canDamage: 0
+  fireExtinguishSFX: {fileID: 3516215287134506095, guid: 94dcc7e7a06d7384da427cf413f31f37, type: 3}
+  fireBurstSFX: {fileID: 3163542507925619493, guid: 800dfd9d6508e4c458b765e73a3406c9, type: 3}
 --- !u!70 &311142004811617119
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
