@@ -41,7 +41,7 @@ public class DialogueManager : MonoBehaviour
     private DialogueLine currentLine;
     private bool isTyping = false;
     private bool dialogueEnded = false;
-
+    public Animator animator;
     void Start()
     {
         dialoguePanel.SetActive(true);
@@ -104,7 +104,7 @@ public class DialogueManager : MonoBehaviour
         isTyping = true;
         speakerNameText.text = linea.speakerName;
         dialogueText.text = "";
-
+        animator.SetBool("Talking", true);
         foreach (char c in linea.text)
         {
             dialogueText.text += c;
@@ -144,9 +144,11 @@ public class DialogueManager : MonoBehaviour
 
     void TerminarDialogo()
     {
+        
         dialogueEnded = true;
         dialoguePanel.SetActive(false);
         StartCoroutine(MostrarBotonInicio());
+        animator.SetBool("Talking", false);
     }
 
     IEnumerator MostrarBotonInicio()

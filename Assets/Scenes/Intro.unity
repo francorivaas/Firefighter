@@ -235,7 +235,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -1083,7 +1083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf7534245de88641bd06da843a9fdc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
-  leftPortrait: {fileID: 0}
+  leftPortrait: {fileID: 2123885742}
   rightPortrait: {fileID: 1873809397}
   speakerNameText: {fileID: 1318604782}
   dialogueText: {fileID: 755067701}
@@ -1097,6 +1097,7 @@ MonoBehaviour:
   leftFocus: {fileID: 0}
   rightFocus: {fileID: 0}
   cameraMoveSpeed: 2
+  animator: {fileID: 2123885744}
 --- !u!4 &1809715823
 Transform:
   m_ObjectHideFlags: 0
@@ -1123,6 +1124,7 @@ GameObject:
   - component: {fileID: 1873809396}
   - component: {fileID: 1873809398}
   - component: {fileID: 1873809397}
+  - component: {fileID: 1873809399}
   m_Layer: 5
   m_Name: boss (1)
   m_TagString: Untagged
@@ -1187,6 +1189,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1873809395}
   m_CullTransparentMesh: 1
+--- !u!95 &1873809399
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873809395}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1a062faf46de94841acef4e1949863c4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1913531889
 GameObject:
   m_ObjectHideFlags: 0
@@ -1381,6 +1405,7 @@ GameObject:
   - component: {fileID: 2123885741}
   - component: {fileID: 2123885743}
   - component: {fileID: 2123885742}
+  - component: {fileID: 2123885744}
   m_Layer: 5
   m_Name: firefighter (2)
   m_TagString: Untagged
@@ -1445,6 +1470,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123885740}
   m_CullTransparentMesh: 1
+--- !u!95 &2123885744
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123885740}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1a062faf46de94841acef4e1949863c4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2134695484
 GameObject:
   m_ObjectHideFlags: 0
