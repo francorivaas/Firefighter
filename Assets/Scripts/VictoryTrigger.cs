@@ -3,9 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class VictoryTrigger : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             if (GameManager.Instance.rescuedCitizens >= GameManager.Instance.minCitizens)
                 SceneManager.LoadScene(1);

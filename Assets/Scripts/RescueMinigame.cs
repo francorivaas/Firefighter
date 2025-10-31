@@ -25,6 +25,8 @@ public class RescueMinigame : MonoBehaviour
     private bool puedeJugar = true;
     private Vector3 posicionInicialAguja;
 
+    public AudioSource rescuedCitizenSFX;
+    public AudioSource deadCitizenSFX;
     
     public int citizens;
 
@@ -78,10 +80,12 @@ public class RescueMinigame : MonoBehaviour
             float nuevoAncho = Mathf.Max(zonaVerde.sizeDelta.x - greenZoneShrinkAmount, minGreenZoneWidth);
             zonaVerde.sizeDelta = new Vector2(nuevoAncho, zonaVerde.sizeDelta.y);
             velocidad += aumentoVelocidad;
+            rescuedCitizenSFX.Play();
             GameManager.Instance.rescuedCitizens++;
         }
         else
         {
+            deadCitizenSFX.Play();
             GameManager.Instance.deadCitizens++;
         }
 

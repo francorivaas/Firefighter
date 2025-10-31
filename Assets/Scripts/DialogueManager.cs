@@ -118,8 +118,8 @@ public class DialogueManager : MonoBehaviour
     {
         bool isLeft = linea.speakerName == "Bombero"; // ajustá el nombre del personaje según tu caso
 
-        leftPortrait.color = isLeft ? Color.white : new Color(1, 1, 1, 0.2f);
-        rightPortrait.color = !isLeft ? Color.white : new Color(1, 1, 1, 0.2f);
+        leftPortrait.color = isLeft ? Color.white : new Color(1, 1, 1, 0.35f);
+        rightPortrait.color = !isLeft ? Color.white : new Color(1, 1, 1, 0.35f);
 
         if (mainCamera && leftFocus && rightFocus)
         {
