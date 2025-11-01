@@ -18,9 +18,14 @@ public class FireTarget : MonoBehaviour
     public bool canCount;
     public bool canDamage;
 
+    private AudioSource audioSrc;
+    public AudioClip burstSfx;
+    public AudioClip extinguishSfx;
+
     void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
+        audioSrc = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -28,6 +33,7 @@ public class FireTarget : MonoBehaviour
         currentTimeToDamage = 0;
         canCount = false;
         canDamage = true;
+        audioSrc.PlayOneShot(burstSfx);
     }
 
     public void ApplyWater(float amount)
@@ -46,6 +52,7 @@ public class FireTarget : MonoBehaviour
     {
         isExtinguished = true;
         currentExtinguishProgress = 0f;
+        audioSrc.PlayOneShot(extinguishSfx);
         Animator animator = GetComponent<Animator>();
         if (animator != null)
             animator.SetBool("Extinguish", true);
@@ -56,6 +63,7 @@ public class FireTarget : MonoBehaviour
     void Reignite()
     {
         isExtinguished = false;
+        audioSrc.PlayOneShot(burstSfx);
         Animator animator = GetComponent<Animator>();
         if (animator != null)
             animator.SetBool("Extinguish", false);

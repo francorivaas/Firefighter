@@ -16,8 +16,6 @@ public class FireSpawner : MonoBehaviour
     public bool spawnSequentially = false; // si true, recorre los puntos en orden; si false, aleatorio
     private int currentIndex = 0;
 
-    public AudioSource fireBurstSfx;
-
     void Start()
     {
         timer = spawnInterval;

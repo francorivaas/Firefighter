@@ -41,5 +41,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Floor
+    uniqueID: 542081269
+    locked: 0
+  - name: Player and characters
+    uniqueID: 318239265
+    locked: 0
+  - name: New Layer 3
+    uniqueID: 329850401
+    locked: 0
+  - name: New Layer 4
+    uniqueID: 1550294207
+    locked: 0
   m_RenderingLayers:
   - Default

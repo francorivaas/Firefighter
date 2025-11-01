@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     [Header("UI")]
     public Text rescuedCitizensText;
 
+    public GameObject transition;
+
     private void Awake()
     {
         if (Instance == null)
@@ -29,6 +31,11 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        transition.SetActive(true);
     }
 
     private void Update()

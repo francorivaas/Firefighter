@@ -13,6 +13,13 @@ public class DialogueLine
     public Sprite portrait;
 }
 
+[System.Serializable]
+public class SpeakerColor
+{
+    public string speakerName;
+    public Color nameColor = Color.white;
+}
+
 public class DialogueManager : MonoBehaviour
 {
     [Header("Referencias UI")]
@@ -24,7 +31,6 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Botón de inicio de misión")]
     public GameObject startMissionPanel;
-    public Text startMissionText;
     public Button startMissionButton;
 
     [Header("Configuración")]
@@ -37,15 +43,29 @@ public class DialogueManager : MonoBehaviour
     public Transform rightFocus;
     public float cameraMoveSpeed = 2f;
 
+    [Header("Colores por personaje")]
+    public List<SpeakerColor> speakerColors = new List<SpeakerColor>();
+
+    private Dictionary<string, Color> colorLookup = new Dictionary<string, Color>();
     private Queue<DialogueLine> dialogueQueue = new Queue<DialogueLine>();
     private DialogueLine currentLine;
     private bool isTyping = false;
     private bool dialogueEnded = false;
-    public Animator animator;
+
+    public Animator fireFighterAnimator;
+    public Animator bossAnimator;
+
     void Start()
     {
         dialoguePanel.SetActive(true);
         startMissionPanel.SetActive(false);
+
+        // Convertir lista a diccionario para acceso rápido
+        foreach (var entry in speakerColors)
+        {
+            if (!colorLookup.ContainsKey(entry.speakerName))
+                colorLookup.Add(entry.speakerName, entry.nameColor);
+        }
 
         // Busca automáticamente un DialogueTrigger en escena y lo inicia
         DialogueTrigger trigger = FindObjectOfType<DialogueTrigger>();
@@ -60,7 +80,12 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if (dialogueEnded) return;
+        if (dialogueEnded)
+        {
+            fireFighterAnimator.SetBool("Out", true);
+            bossAnimator.SetBool("Out", true);
+            return;
+        }
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -102,9 +127,16 @@ public class DialogueManager : MonoBehaviour
     IEnumerator EscribirTexto(DialogueLine linea)
     {
         isTyping = true;
+
+        // Cambiar color del nombre según el personaje
+        if (colorLookup.TryGetValue(linea.speakerName, out Color nameColor))
+            speakerNameText.color = nameColor;
+        else
+            speakerNameText.color = Color.white;
+
         speakerNameText.text = linea.speakerName;
         dialogueText.text = "";
-        animator.SetBool("Talking", true);
+
         foreach (char c in linea.text)
         {
             dialogueText.text += c;
@@ -116,7 +148,7 @@ public class DialogueManager : MonoBehaviour
 
     void CambiarPersonajeActivo(DialogueLine linea)
     {
-        bool isLeft = linea.speakerName == "Bombero"; // ajustá el nombre del personaje según tu caso
+        bool isLeft = linea.speakerName == "Bombero"; // Ajustá según tus nombres
 
         leftPortrait.color = isLeft ? Color.white : new Color(1, 1, 1, 0.35f);
         rightPortrait.color = !isLeft ? Color.white : new Color(1, 1, 1, 0.35f);
@@ -144,21 +176,15 @@ public class DialogueManager : MonoBehaviour
 
     void TerminarDialogo()
     {
-        
         dialogueEnded = true;
         dialoguePanel.SetActive(false);
         StartCoroutine(MostrarBotonInicio());
-        animator.SetBool("Talking", false);
     }
 
     IEnumerator MostrarBotonInicio()
     {
         yield return new WaitForSeconds(0.5f);
-
         startMissionPanel.SetActive(true);
-        startMissionText.text = "Pulsa E para comenzar misión";
-
-        // Espera a que el jugador presione E
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
     }
 
