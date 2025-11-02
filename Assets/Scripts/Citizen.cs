@@ -3,9 +3,14 @@ using UnityEngine.UI;
 
 public class Citizen : MonoBehaviour
 {
+    [Header("Referencias")]
     public RescueMinigame rescueMinigame;
     public GameObject rescueBar;
     public Text interactionText;
+
+    [Header("Puntaje por rescate")]
+    public int pointsIfCountsForMin = 100;  // Puntos si este rescate cuenta dentro del mínimo
+    public int pointsIfOptional = 200;      // Puntos si este rescate es adicional (más de los necesarios)
 
     private bool playerNearby = false;
     private bool isBeingRescued = false;
@@ -53,10 +58,35 @@ public class Citizen : MonoBehaviour
         rescueBar.SetActive(true);
     }
 
+    // Este método se llama cuando el rescate termina correctamente
     public void EndRescue()
     {
         rescueMinigame.gameObject.SetActive(false);
         rescueBar.SetActive(false);
+
+        // Determinar si el rescate cuenta dentro del mínimo o es extra
+        bool countsForMin = false;
+        if (GameManager.Instance != null)
+        {
+            int rescuedSoFar = GameManager.Instance.rescuedCitizens;
+            countsForMin = rescuedSoFar < GameManager.Instance.minCitizens;
+        }
+
+        // Otorgar puntos en base a la categoría del rescate
+        int points = countsForMin ? pointsIfCountsForMin : pointsIfOptional;
+
+        if (ScoreManager.Instance != null)
+        {
+            ScoreManager.Instance.AddPoints(points);
+        }
+
+        // Notificar al GameManager que se rescató un ciudadano
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.CitizenRescued();
+        }
+
+        // Eliminar al ciudadano
         Destroy(gameObject);
     }
 }

@@ -427,28 +427,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   lineas:
-  - speakerName: Bombero
-    text: "Aqu\xED estoy jefe."
+  - speakerName: Un bombero cualquiera
+    text: "\xA1Jefe, o\xED la alarma!"
     portrait: {fileID: -5131272038064551317, guid: 7bb44af0e30c7614a8e895c4ee5726d8, type: 3}
-  - speakerName: Jefe
-    text: "Han atacado el centro comercial. Se estima que hay un total de 10 ciudadanos
-      que est\xE1n siendo retenidos."
+  - speakerName: Un bombero cualquiera
+    text: "\xBFCu\xE1l es el estado de la misi\xF3n?"
     portrait: {fileID: -7298898629300636624, guid: e0865afb3e4afee4a916a574cb018917, type: 3}
-  - speakerName: Jefe
-    text: "Adem\xE1s, el edificio est\xE1 en llamas."
+  - speakerName: Un jefe molesto
+    text: "Han atacado el centro comercial y hay 8 civiles en peligro. Adem\xE1s
+      he perdido mi paquete de cigarrillos y tarjeta de cr\xE9dito dentro."
     portrait: {fileID: -7298898629300636624, guid: e0865afb3e4afee4a916a574cb018917, type: 3}
-  - speakerName: Jefe
-    text: "Y para colmo, la jefatura no considerar\xE1 la misi\xF3n como un \xE9xito
-      a menos que salves a 8 civiles."
+  - speakerName: Un jefe molesto
+    text: "Creo que la prioridad est\xE1 m\xE1s que clara, \xBFno bombero?"
     portrait: {fileID: -7298898629300636624, guid: e0865afb3e4afee4a916a574cb018917, type: 3}
-  - speakerName: Jefe
-    text: "Encuentra a los civiles, des\xE1talos con cuidado y localiza la salida..."
+  - speakerName: Un bombero cualquiera
+    text: "Usted no ser\xEDa el mismo sin sus cigarrillos. Y no podr\xE1 comprar
+      otros sin su tarjeta de cr\xE9dito."
+    portrait: {fileID: 7228157715516960518, guid: 75c46edcf14e9e749a4b286ddfa8d464, type: 3}
+  - speakerName: Un jefe molesto
+    text: "Exacto. Sin embargo, para que la misi\xF3n sea un \xE9xito solamente es
+      necesario rescatar a los 8 civiles... o al menos 5 de ellos."
     portrait: {fileID: -7298898629300636624, guid: e0865afb3e4afee4a916a574cb018917, type: 3}
-  - speakerName: Bombero
-    text: Entendido. 8 civiles de 10 al menos.
+  - speakerName: Un bombero cualquiera
+    text: Todo claro, jefe.
     portrait: {fileID: -5131272038064551317, guid: 7bb44af0e30c7614a8e895c4ee5726d8, type: 3}
-  - speakerName: JEFE
-    text: Y cuidado con el fuego.
+  - speakerName: Un jefe molesto
+    text: "Muero por un cigarrillo. Lo bueno es que el edificio est\xE1 en llamas,
+      por lo que no necesitar\xE9 encendedor."
     portrait: {fileID: -7298898629300636624, guid: e0865afb3e4afee4a916a574cb018917, type: 3}
 --- !u!4 &1070456916
 Transform:
@@ -668,10 +673,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c3b9083944dd277449feaa98252de9a9, type: 3}
-    m_FontSize: 58
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 8
+    m_MinSize: 3
     m_MaxSize: 81
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -679,7 +684,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bombero
+  m_Text: Un bombero cualquiera
 --- !u!222 &1318604783
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1040,9 +1045,9 @@ MonoBehaviour:
   rightFocus: {fileID: 0}
   cameraMoveSpeed: 2
   speakerColors:
-  - speakerName: Bombero
+  - speakerName: Un bombero cualquiera
     nameColor: {r: 1, g: 0, b: 0, a: 1}
-  - speakerName: Jefe
+  - speakerName: Un jefe molesto
     nameColor: {r: 0, g: 0, b: 0, a: 1}
   fireFighterAnimator: {fileID: 2123885744}
   bossAnimator: {fileID: 1873809399}

@@ -148,7 +148,7 @@ public class DialogueManager : MonoBehaviour
 
     void CambiarPersonajeActivo(DialogueLine linea)
     {
-        bool isLeft = linea.speakerName == "Bombero"; // Ajustá según tus nombres
+        bool isLeft = linea.speakerName == "Un bombero cualquiera"; // Ajustá según tus nombres
 
         leftPortrait.color = isLeft ? Color.white : new Color(1, 1, 1, 0.35f);
         rightPortrait.color = !isLeft ? Color.white : new Color(1, 1, 1, 0.35f);

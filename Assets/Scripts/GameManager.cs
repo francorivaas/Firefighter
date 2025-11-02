@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
         // Actualizar UI
         if (rescuedCitizensText != null)
         {
-            rescuedCitizensText.text = "Ciudadanos: " + rescuedCitizens + "/" + minCitizens;
+            rescuedCitizensText.text = "Ciudadanos: " + rescuedCitizens + "/" + totalCitizens;
         }
     }
 
