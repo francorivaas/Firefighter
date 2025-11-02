@@ -12,7 +12,7 @@ public class Citizen : MonoBehaviour
 
     private void Update()
     {
-        if (playerNearby && !isBeingRescued && Input.GetKeyDown(KeyCode.E))
+        if (playerNearby && !isBeingRescued && rescueMinigame.hasKnife && Input.GetKeyDown(KeyCode.E))
         {
             StartRescue();
         }
@@ -24,8 +24,12 @@ public class Citizen : MonoBehaviour
         if (player != null)
         {
             playerNearby = true;
-            interactionText.text = "Presiona E para rescatar";
-            interactionText.gameObject.SetActive(true);
+
+            if (rescueMinigame.hasKnife)
+            {
+                interactionText.text = "Presiona E para rescatar";
+                interactionText.gameObject.SetActive(true);
+            }
         }
     }
 

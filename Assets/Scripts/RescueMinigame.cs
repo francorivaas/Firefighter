@@ -30,6 +30,8 @@ public class RescueMinigame : MonoBehaviour
     
     public int citizens;
 
+    public bool hasKnife;
+
     void Start()
     {
         citizens = 0;
@@ -42,14 +44,15 @@ public class RescueMinigame : MonoBehaviour
     {
         if (!puedeJugar) return;
 
-        MoverAguja();
-
-        if (Input.GetMouseButtonDown(0))
+        if (hasKnife)
         {
-            VerificarResultado();
-        }
+            MoverAguja();
 
-        
+            if (Input.GetMouseButtonDown(0))
+            {
+                VerificarResultado();
+            }
+        }
     }
 
     void MoverAguja()
