@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InGameDialogueTrigger : MonoBehaviour
 {
     public InGameDialogue inGameDialogue;
-    public Sprite sprite;
+    public Image sprite;
     public string dialogueID = "D_1";
     [TextArea(2, 5)] public string textoDelJefe;
 
@@ -14,7 +15,7 @@ public class InGameDialogueTrigger : MonoBehaviour
         if (!triggered && collision.gameObject.CompareTag("Player")) 
         {
             triggered = false;
-            inGameDialogue.TriggerDialogue("D_1","No podrás rescatar a este ciudadano sin un cuchillo... ve a buscarlo", sprite);
+            inGameDialogue.TriggerDialogue("D_1","No podrás rescatar a este ciudadano sin un cuchillo para cortar las cuerdas... seguro que hay uno por aquí. ¡Ve a buscarlo!", sprite);
         }
     }
 }

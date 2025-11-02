@@ -40,7 +40,7 @@ public class InGameDialogue : MonoBehaviour
     /// <summary>
     /// Llama este método para mostrar un diálogo único.
     /// </summary>
-    public void TriggerDialogue(string dialogueID, string text, Sprite portrait)
+    public void TriggerDialogue(string dialogueID, string text, Image portrait)
     {
         if (shownDialogues.Contains(dialogueID))
             return; // 🔹 Ya se mostró, no lo repite
@@ -54,7 +54,7 @@ public class InGameDialogue : MonoBehaviour
 
         dialoguePanel.SetActive(true);
         isDialogueActive = true;
-        speakerPortrait.sprite = portrait;
+        speakerPortrait = portrait;
 
         StartCoroutine(TypeText(text));
     }
