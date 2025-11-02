@@ -6,7 +6,7 @@ public class GunShooter : MonoBehaviour
     public bool hasGun = false;           // El jugador solo dispara si tiene el arma
     public float fireRate = 0.25f;        // Tiempo entre disparos
     public float bulletSpeed = 10f;       // Velocidad de la bala
-    public int damage = 20;            // Daño que inflige cada bala
+    public int damage = 20;               // Daño que inflige cada bala
 
     [Header("Referencias")]
     public Transform firePoint;           // Lugar desde donde se origina el disparo
@@ -42,7 +42,7 @@ public class GunShooter : MonoBehaviour
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             PlayerBullet bulletScript = bullet.GetComponent<PlayerBullet>();
             print("shoot");
-            
+
             // Configura daño y velocidad
             if (bulletScript != null)
             {
@@ -60,5 +60,11 @@ public class GunShooter : MonoBehaviour
     {
         hasGun = true;
         Debug.Log("El jugador ha recogido el arma.");
+    }
+
+    // Método auxiliar para otros scripts
+    public bool IsGunEquipped()
+    {
+        return hasGun;
     }
 }

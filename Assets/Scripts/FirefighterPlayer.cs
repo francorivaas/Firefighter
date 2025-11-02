@@ -1,20 +1,28 @@
-// FirefighterPlayer.cs
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FirefighterPlayer : MonoBehaviour
 {
-    [Header("Ajustes de disparo")]
-    public float waterRange = 5f;             // Distancia m�xima del chorro de agua
+    [Header("Ajustes de disparo de agua")]
+    public float waterRange = 5f;             // Distancia máxima del chorro de agua
     public float sprayRate = 0.2f;            // Intervalo entre cada "pulso" de agua
-    public float waterPower = 1f;             // Cu�nto "da�o de agua" se aplica por pulso
+    public float waterPower = 1f;             // Cuánto "daño de agua" se aplica por pulso
     public LayerMask fireLayer;               // Capa de los fuegos
 
     private float nextSprayTime;
-
     public GameObject water;
+
+    [Header("Referencias")]
+    public GunShooter gunShooter; // 🔫 Referencia al script del arma
 
     void Update()
     {
+        // 🧠 Si el jugador tiene el arma equipada, no puede usar la manguera
+        if (gunShooter != null && gunShooter.IsGunEquipped())
+        {
+            water.gameObject.SetActive(false);
+            return;
+        }
+
         if (Input.GetMouseButton(0)) // click izquierdo
         {
             if (Time.time >= nextSprayTime)
@@ -38,8 +46,6 @@ public class FirefighterPlayer : MonoBehaviour
         // Raycast para detectar el fuego
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, waterRange, fireLayer);
 
-        
-
         if (hit.collider != null)
         {
             FireTarget fire = hit.collider.GetComponent<FireTarget>();
@@ -52,4 +58,3 @@ public class FirefighterPlayer : MonoBehaviour
         Debug.DrawRay(transform.position, direction * waterRange, Color.cyan, 0.1f);
     }
 }
-

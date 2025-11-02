@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerBullet : MonoBehaviour
 {
     public float speed = 10f;
-    public int damage = 20;
+    public int damage;
     public float lifeTime = 3f; // tiempo antes de destruirse automáticamente
     public string enemyTag = "Enemy"; // etiqueta de los enemigos
 
