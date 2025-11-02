@@ -8,26 +8,28 @@ public class Collectible : MonoBehaviour
 
     [Header("Opcional: sonido / efecto")]
     private AudioSource audioSrc;
+    private SpriteRenderer sprites;
+    private Collider2D col;
 
     private void Start()
     {
         audioSrc = GetComponent<AudioSource>();
+        col = GetComponent<BoxCollider2D>();
+        sprites = GetComponent<SpriteRenderer>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Player")) return;
+        if (other.gameObject.CompareTag("Player"))
+        {
+            audioSrc.Play();
+            if (ScoreManager.Instance != null)
+            {
+                ScoreManager.Instance.AddPoints(points);
 
-        // Sumar puntos
-        if (ScoreManager.Instance != null)
-            ScoreManager.Instance.AddPoints(points);
-
-        audioSrc.Play();
-
-        // Destruir u ocultar
-        if (destroyOnCollect)
-            Destroy(gameObject);
-        else
-            gameObject.SetActive(false);
+            }
+            sprites.enabled = false;
+            col.enabled = false;
+        }
     }
 }

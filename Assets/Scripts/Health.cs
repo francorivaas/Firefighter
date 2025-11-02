@@ -6,7 +6,7 @@ public class Health : MonoBehaviour
 {
     [Header("Salud")]
     public float maxHealth = 100f;
-    [HideInInspector] public float currentHealth;
+    public float currentHealth;
 
     [Header("Audio de daño")]
     public AudioSource audioSource;          // Fuente de audio para reproducir los sonidos
