@@ -119,6 +119,14 @@ public class EnemyCoverShooter : MonoBehaviour
     {
         Destroy(lifebar);
         StopAllCoroutines();
+
+        // Buscar el script del arma del jugador y "guardarla"
+        GunShooter playerGun = FindObjectOfType<GunShooter>();
+        if (playerGun != null)
+        {
+            playerGun.RemoveGun();
+        }
+
         Destroy(gameObject);
     }
 }

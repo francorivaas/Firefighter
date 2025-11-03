@@ -75,4 +75,15 @@ public class GunShooter : MonoBehaviour
     {
         return hasGun;
     }
+
+    public void RemoveGun()
+    {
+        hasGun = false;
+        Animator animator = GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.SetBool("GrabManguera", true);
+        }
+        Debug.Log("El jugador guardó el arma y volvió a usar la manguera.");
+    }
 }
