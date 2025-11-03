@@ -31,6 +31,8 @@ public class EnemyCoverShooter : MonoBehaviour
     private bool isShooting = false;
     private bool isActive = false; // ⬅️ Nuevo: el enemigo no actúa hasta ser activado
 
+    public GameObject lifebar;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -115,6 +117,7 @@ public class EnemyCoverShooter : MonoBehaviour
 
     void Die()
     {
+        Destroy(lifebar);
         StopAllCoroutines();
         Destroy(gameObject);
     }
