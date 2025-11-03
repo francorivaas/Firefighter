@@ -81,10 +81,10 @@ public class Citizen : MonoBehaviour
         //}
 
         // Notificar al GameManager que se rescató un ciudadano
-        if (GameManager.Instance != null)
-        {
-            GameManager.Instance.CitizenRescued();
-        }
+        //if (GameManager.Instance != null)
+        //{
+        //    GameManager.Instance.CitizenRescued();
+        //}
 
         // Eliminar al ciudadano
         Destroy(gameObject);
