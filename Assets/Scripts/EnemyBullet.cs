@@ -47,7 +47,7 @@ public class EnemyBullet : MonoBehaviour
         }
 
 
-        else if (collision.CompareTag("Obstacle") || collision.CompareTag("Cover"))
+        else if (collision.CompareTag("Cover"))
         {
             if (impactEffect != null)
                 Instantiate(impactEffect, transform.position, Quaternion.identity);

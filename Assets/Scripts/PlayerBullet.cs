@@ -33,7 +33,9 @@ public class PlayerBullet : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-
-        // Destruye la bala al impactar con cualquier cosa
+        else if (collision.gameObject.CompareTag("Cover"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

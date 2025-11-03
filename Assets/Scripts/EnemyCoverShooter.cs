@@ -1,59 +1,63 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections;
+using UnityEngine.Events;
 
 public class EnemyCoverShooter : MonoBehaviour
 {
     [Header("Coberturas y movimiento")]
-    public Transform[] coverPoints;       // Lugares donde el enemigo puede cubrirse
+    public Transform[] coverPoints;
     public float moveSpeed = 3f;
     private Transform currentCover;
 
     [Header("Disparo")]
     public GameObject bulletPrefab;
     public Transform firePoint;
-    public float minShootInterval = 2f;   // Tiempo mínimo entre ráfagas
-    public float maxShootInterval = 5f;   // Tiempo máximo entre ráfagas
-    public int minBulletsPerBurst = 1;    // Balas mínimas por ráfaga
-    public int maxBulletsPerBurst = 5;    // Balas máximas por ráfaga
-    public float fireRate = 0.2f;         // Tiempo entre cada bala en una ráfaga
-    public float bulletSpeed = 10f;       // Velocidad configurable de la bala
+    public float minShootInterval = 2f;
+    public float maxShootInterval = 5f;
+    public int minBulletsPerBurst = 1;
+    public int maxBulletsPerBurst = 5;
+    public float fireRate = 0.2f;
+    public float bulletSpeed = 10f;
 
     [Header("Vida")]
     public int maxHealth = 100;
     public int currentHealth;
 
+    [System.Serializable]
+    public class HealthChangedEvent : UnityEvent<float, float> { }
+    [HideInInspector] public HealthChangedEvent onHealthChanged = new HealthChangedEvent();
+
     private bool isCovered = true;
     private bool isShooting = false;
+    private bool isActive = false; // â¬…ï¸ Nuevo: el enemigo no actÃºa hasta ser activado
 
     void Start()
     {
         currentHealth = maxHealth;
+        onHealthChanged.Invoke(currentHealth, maxHealth);
+    }
 
-        // Inicia la rutina de moverse entre coberturas y disparar
+    public void ActivateEnemy()
+    {
+        if (isActive) return;
+        isActive = true;
         StartCoroutine(EnemyBehavior());
     }
 
     IEnumerator EnemyBehavior()
     {
-        while (true)
+        while (isActive)
         {
-            // Cambia de cobertura aleatoriamente
             if (coverPoints.Length > 0)
             {
                 Transform targetCover = coverPoints[Random.Range(0, coverPoints.Length)];
                 yield return MoveToCover(targetCover);
             }
 
-            // Sale de la cobertura
             isCovered = false;
-
-            // Dispara ráfaga aleatoria
             yield return StartCoroutine(ShootBurst());
-
-            // Vuelve a cobertura
             isCovered = true;
 
-            // Espera un tiempo aleatorio antes de volver a actuar
             float wait = Random.Range(minShootInterval, maxShootInterval);
             yield return new WaitForSeconds(wait);
         }
@@ -78,12 +82,11 @@ public class EnemyCoverShooter : MonoBehaviour
 
         for (int i = 0; i < bulletsToShoot; i++)
         {
-            if (isCovered) break; // si se cubre antes, detiene la ráfaga
+            if (isCovered) break;
 
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
             EnemyBullet bulletScript = bullet.GetComponent<EnemyBullet>();
 
-            // Calcula dirección hacia el jugador
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             if (player != null && bulletScript != null)
             {
@@ -101,6 +104,9 @@ public class EnemyCoverShooter : MonoBehaviour
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        onHealthChanged.Invoke(currentHealth, maxHealth);
+
         if (currentHealth <= 0)
         {
             Die();

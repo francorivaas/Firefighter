@@ -6,6 +6,7 @@ public class HealthBar : MonoBehaviour
 {
     [Header("Referencia al script de salud del personaje")]
     public Health targetHealth;
+    public EnemyCoverShooter enemyHealth;
 
     [Header("Imagen de relleno de la barra")]
     public Image fillImage;
@@ -14,8 +15,11 @@ public class HealthBar : MonoBehaviour
     {
         if (targetHealth != null)
         {
-            // Suscribirse al evento
             targetHealth.onHealthChanged.AddListener(UpdateHealthBar);
+        }
+        else if (enemyHealth != null)
+        {
+            enemyHealth.onHealthChanged.AddListener(UpdateHealthBar);
         }
     }
 
@@ -43,6 +47,4 @@ public class HealthBar : MonoBehaviour
         }
         fillImage.fillAmount = target;
     }
-
 }
-

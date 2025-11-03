@@ -75,10 +75,10 @@ public class Citizen : MonoBehaviour
         // Otorgar puntos en base a la categoría del rescate
         int points = countsForMin ? pointsIfCountsForMin : pointsIfOptional;
 
-        if (ScoreManager.Instance != null)
-        {
-            ScoreManager.Instance.AddPoints(points);
-        }
+        //if (ScoreManager.Instance != null)
+        //{
+        //    ScoreManager.Instance.AddPoints(points);
+        //}
 
         // Notificar al GameManager que se rescató un ciudadano
         if (GameManager.Instance != null)

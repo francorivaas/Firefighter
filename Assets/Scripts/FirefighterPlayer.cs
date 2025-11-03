@@ -52,6 +52,7 @@ public class FirefighterPlayer : MonoBehaviour
             if (fire != null)
             {
                 fire.ApplyWater(waterPower);
+                
             }
         }
 
