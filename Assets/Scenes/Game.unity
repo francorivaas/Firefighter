@@ -32228,7 +32228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb105870d2390e94f97e8455f40a8c71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TopDownPlayerController
-  moveSpeed: 5
+  moveSpeed: 6.5
   usePhysicsMovement: 1
   rotationSmoothing: 8
 --- !u!50 &1459027712
@@ -33585,11 +33585,11 @@ PrefabInstance:
       objectReference: {fileID: 946950222}
     - target: {fileID: 6186416286030763448, guid: bd93a81d96362544d99e4b1fb8204367, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -32.836304
+      value: -32.61
       objectReference: {fileID: 0}
     - target: {fileID: 6186416286030763448, guid: bd93a81d96362544d99e4b1fb8204367, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 36.76744
+      value: 21.43
       objectReference: {fileID: 0}
     - target: {fileID: 6186416286030763448, guid: bd93a81d96362544d99e4b1fb8204367, type: 3}
       propertyPath: m_LocalPosition.z
@@ -33597,7 +33597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6186416286030763448, guid: bd93a81d96362544d99e4b1fb8204367, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.9996645
+      value: -0.025905237
       objectReference: {fileID: 0}
     - target: {fileID: 6186416286030763448, guid: bd93a81d96362544d99e4b1fb8204367, type: 3}
       propertyPath: m_LocalRotation.x
@@ -33609,7 +33609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6186416286030763448, guid: bd93a81d96362544d99e4b1fb8204367, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.025902387
+      value: 0.9996644
       objectReference: {fileID: 0}
     - target: {fileID: 6186416286030763448, guid: bd93a81d96362544d99e4b1fb8204367, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -33621,7 +33621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6186416286030763448, guid: bd93a81d96362544d99e4b1fb8204367, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -357.031
+      value: -537.031
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -46086,7 +46086,7 @@ Transform:
   m_GameObject: {fileID: 1702739242}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.28, y: 0.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46107,8 +46107,8 @@ MonoBehaviour:
   inGameDialogue: {fileID: 1603680429}
   sprite: {fileID: 723697910}
   dialogueID: D_1
-  textoDelJefe: "No podr\xE1s rescatar a nadie sin algo filoso con lo que cortar
-    las cuerdas que los atan... seguro que encontrar\xE1s algo por aqu\xED."
+  textoDelJefe: "Un ciudadano en aprietos. Deber\xEDas buscar algo filoso con lo
+    que cortar la cuerda... y mis cigarrillos."
 --- !u!61 &1702739245
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -48047,8 +48047,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 318239265
-  m_SortingLayer: 2
+  m_SortingLayerID: 329850401
+  m_SortingLayer: 3
   m_SortingOrder: 2
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -53735,11 +53735,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6186416286030763448, guid: bd93a81d96362544d99e4b1fb8204367, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.76
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6186416286030763448, guid: bd93a81d96362544d99e4b1fb8204367, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.52
+      value: 0.46
       objectReference: {fileID: 0}
     - target: {fileID: 6186416286030763448, guid: bd93a81d96362544d99e4b1fb8204367, type: 3}
       propertyPath: m_LocalPosition.z
