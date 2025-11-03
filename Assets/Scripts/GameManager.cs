@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public Text rescuedCitizensText;
 
     public GameObject transition;
+    public GameObject door;
 
     private void Awake()
     {
@@ -49,7 +50,7 @@ public class GameManager : MonoBehaviour
         // Si alcanzó la cantidad mínima, puede salir
         if (rescuedCitizens >= minCitizens)
         {
-            print("✅ Ya puedes ir a la salida para completar el nivel");
+            door.gameObject.SetActive(false);
         }
 
         // 🔥 NUEVA LÓGICA DE DERROTA 🔥
