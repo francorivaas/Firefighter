@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Unity.Cinemachine;
 
 public class FirefighterPlayer : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class FirefighterPlayer : MonoBehaviour
 
     [Header("Referencias")]
     public GunShooter gunShooter; // 🔫 Referencia al script del arma
+
+    
 
     void Update()
     {

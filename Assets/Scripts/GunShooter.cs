@@ -1,4 +1,5 @@
 using UnityEngine;
+using Unity.Cinemachine;
 
 public class GunShooter : MonoBehaviour
 {
@@ -17,6 +18,12 @@ public class GunShooter : MonoBehaviour
     public AudioSource gunSound;          // Sonido del disparo
 
     private float nextFireTime = 0f;
+    private CinemachineImpulseSource source;
+
+    private void Start()
+    {
+        source = GetComponent<CinemachineImpulseSource>();        
+    }
 
     void Update()
     {
@@ -35,6 +42,7 @@ public class GunShooter : MonoBehaviour
         // Efectos
         if (muzzleFlash != null) muzzleFlash.Play();
         if (gunSound != null) gunSound.Play();
+        CameraShakeManager.instance.CameraShake(source);
 
         // Instancia la bala
         if (bulletPrefab != null && firePoint != null)

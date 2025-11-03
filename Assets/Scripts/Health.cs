@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
+using Unity.Cinemachine;
 
 public class Health : MonoBehaviour
 {
@@ -17,9 +18,12 @@ public class Health : MonoBehaviour
     public UnityEvent<float, float> onHealthChanged;
     public CountdownTimer timer;
 
+    private CinemachineImpulseSource source;
+
     void Start()
     {
         currentHealth = maxHealth;
+        source = GetComponent<CinemachineImpulseSource>();
     }
 
     private void Update()
@@ -37,7 +41,7 @@ public class Health : MonoBehaviour
         currentHealth -= amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         onHealthChanged.Invoke(currentHealth, maxHealth);
-        print("receiving damage");
+        CameraShakeManager.instance.CameraShake(source);
 
         PlayRandomDamageSound();
     }
