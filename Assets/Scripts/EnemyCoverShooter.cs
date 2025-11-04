@@ -32,6 +32,8 @@ public class EnemyCoverShooter : MonoBehaviour
     private bool isActive = false; // ⬅️ Nuevo: el enemigo no actúa hasta ser activado
 
     public GameObject lifebar;
+    public AudioSource audioSrc;
+    public AudioClip shootingSFX;
 
     void Start()
     {
@@ -79,7 +81,7 @@ public class EnemyCoverShooter : MonoBehaviour
     {
         if (isShooting) yield break;
         isShooting = true;
-
+        audioSrc.PlayOneShot(shootingSFX);
         int bulletsToShoot = Random.Range(minBulletsPerBurst, maxBulletsPerBurst + 1);
 
         for (int i = 0; i < bulletsToShoot; i++)

@@ -20,6 +20,9 @@ public class GunShooter : MonoBehaviour
     private float nextFireTime = 0f;
     private CinemachineImpulseSource source;
 
+    public AudioSource audioSrc;
+    public AudioClip shootSfx;
+
     private void Start()
     {
         source = GetComponent<CinemachineImpulseSource>();        
@@ -43,6 +46,7 @@ public class GunShooter : MonoBehaviour
         if (muzzleFlash != null) muzzleFlash.Play();
         if (gunSound != null) gunSound.Play();
         CameraShakeManager.instance.CameraShake(source);
+        audioSrc.PlayOneShot(shootSfx);
 
         // Instancia la bala
         if (bulletPrefab != null && firePoint != null)
