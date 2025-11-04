@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject transition;
     public GameObject door;
+    public Animator camAnim;
+    public bool isCutscenePlayed;
 
     private void Awake()
     {
@@ -36,6 +38,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        isCutscenePlayed = false;
         transition.SetActive(true);
     }
 
@@ -51,6 +54,13 @@ public class GameManager : MonoBehaviour
         if (rescuedCitizens >= minCitizens)
         {
             door.gameObject.SetActive(false);
+
+            if (!isCutscenePlayed)
+            {
+                camAnim.SetBool("Cutscene1", true);
+                Invoke(nameof(StopCutscene), 3f);
+                isCutscenePlayed = true;
+            }
         }
 
         // 🔥 NUEVA LÓGICA DE DERROTA 🔥
@@ -73,6 +83,12 @@ public class GameManager : MonoBehaviour
     public void CitizenRescued()
     {
         rescuedCitizens++;
+    }
+
+    public void StopCutscene()
+    {
+        if (isCutscenePlayed)
+            camAnim.SetBool("Cutscene1", false);
     }
 
     // Llamá a este método cuando un ciudadano muera
