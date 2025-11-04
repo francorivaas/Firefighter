@@ -34,6 +34,7 @@ public class EnemyCoverShooter : MonoBehaviour
     public GameObject lifebar;
     public AudioSource audioSrc;
     public AudioClip shootingSFX;
+    public AudioClip getDamageSFX;
 
     void Start()
     {
@@ -110,6 +111,8 @@ public class EnemyCoverShooter : MonoBehaviour
         currentHealth -= amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         onHealthChanged.Invoke(currentHealth, maxHealth);
+        audioSrc.PlayOneShot(getDamageSFX);
+        audioSrc.volume = 1f;
 
         if (currentHealth <= 0)
         {

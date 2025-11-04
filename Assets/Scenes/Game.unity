@@ -603,7 +603,7 @@ Transform:
   m_GameObject: {fileID: 56631548}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.00105, y: -44.70009, z: -10}
+  m_LocalPosition: {x: 41.801052, y: -19.90009, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -31669,7 +31669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InGameDialogueTrigger
   inGameDialogue: {fileID: 1603680429}
   dialogueID: D_6
-  speakerName: 
+  speakerName: Ciudadano
   textoDelJefe: "\xA1Ey! \xA1S\xE9 que estoy en un lugar inconveniente, pero si me
     rescatas te dar\xE9 $300 extra adem\xE1s de lo que consigas por tu trabajo!"
 --- !u!61 &1075599943
@@ -32759,6 +32759,7 @@ MonoBehaviour:
   lifebar: {fileID: 780827438}
   audioSrc: {fileID: 1150464706}
   shootingSFX: {fileID: 8300000, guid: 2bc863149ef69b24c927f2d2e321d8c8, type: 3}
+  getDamageSFX: {fileID: 8300000, guid: 3f0bcb6215b52dd4e8ca8696a2afcdea, type: 3}
 --- !u!61 &1150464705
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35853,7 +35854,7 @@ Transform:
   m_GameObject: {fileID: 1459027710}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.4, y: -2.6, z: 0}
+  m_LocalPosition: {x: 33.2, y: 22.2, z: 0}
   m_LocalScale: {x: 1.8, y: 1.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -37644,11 +37645,11 @@ PrefabInstance:
       objectReference: {fileID: 946950222}
     - target: {fileID: 6186416286030763448, guid: bd93a81d96362544d99e4b1fb8204367, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.79423
+      value: 19.8
       objectReference: {fileID: 0}
     - target: {fileID: 6186416286030763448, guid: bd93a81d96362544d99e4b1fb8204367, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27.353983
+      value: 19.2
       objectReference: {fileID: 0}
     - target: {fileID: 6186416286030763448, guid: bd93a81d96362544d99e4b1fb8204367, type: 3}
       propertyPath: m_LocalPosition.z
@@ -49742,7 +49743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   inGameDialogue: {fileID: 1603680429}
   dialogueID: D_1
-  speakerName: 
+  speakerName: Jefe
   textoDelJefe: "Un ciudadano en aprietos. Deber\xEDas buscar algo filoso con lo
     que cortar la cuerda... y mis cigarrillos."
 --- !u!61 &1702739245
@@ -50296,6 +50297,10 @@ PrefabInstance:
       propertyPath: interactionText
       value: 
       objectReference: {fileID: 946950222}
+    - target: {fileID: 478528766401478182, guid: bd93a81d96362544d99e4b1fb8204367, type: 3}
+      propertyPath: pointsIfOptional
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 478528766401478182, guid: bd93a81d96362544d99e4b1fb8204367, type: 3}
       propertyPath: pointsIfCountsForMin
       value: 400

@@ -9,8 +9,8 @@ public class Citizen : MonoBehaviour
     public Text interactionText;
 
     [Header("Puntaje por rescate")]
-    public int pointsIfCountsForMin = 100;  // Puntos si este rescate cuenta dentro del mínimo
-    public int pointsIfOptional = 200;      // Puntos si este rescate es adicional (más de los necesarios)
+    public int pointsIfCountsForMin;  // Puntos si este rescate cuenta dentro del mínimo
+    public int pointsIfOptional;      // Puntos si este rescate es adicional (más de los necesarios)
 
     private bool playerNearby = false;
     private bool isBeingRescued = false;

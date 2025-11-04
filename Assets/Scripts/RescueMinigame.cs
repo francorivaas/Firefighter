@@ -85,7 +85,7 @@ public class RescueMinigame : MonoBehaviour
             velocidad += aumentoVelocidad;
             rescuedCitizenSFX.Play();
             GameManager.Instance.rescuedCitizens++;
-            ScoreManager.Instance.AddPoints(100);
+            ScoreManager.Instance.AddPoints(currentCitizen.pointsIfCountsForMin);
         }
         else
         {
