@@ -12,6 +12,10 @@ public class InGameDialogue : MonoBehaviour
     public Text dialogueText;
     public float typingSpeed = 0.03f;
 
+    [Header("Retratos disponibles")]
+    [Tooltip("Lista de retratos posibles. Usa el mismo nombre que el 'speakerName' que pases.")]
+    public List<SpeakerPortrait> portraits = new List<SpeakerPortrait>();
+
     [Header("Control del jugador")]
     public MonoBehaviour playerController;
 
@@ -38,12 +42,12 @@ public class InGameDialogue : MonoBehaviour
     }
 
     /// <summary>
-    /// Llama este método para mostrar un diálogo único.
+    /// Muestra un diálogo con un retrato específico según el nombre del interlocutor.
     /// </summary>
-    public void TriggerDialogue(string dialogueID, string text, Image portrait)
+    public void TriggerDialogue(string dialogueID, string text, string speakerName)
     {
         if (shownDialogues.Contains(dialogueID))
-            return; // 🔹 Ya se mostró, no lo repite
+            return; // Ya mostrado
 
         shownDialogues.Add(dialogueID);
 
@@ -52,9 +56,13 @@ public class InGameDialogue : MonoBehaviour
         if (playerController != null)
             playerController.enabled = false;
 
+        // 🔹 Buscar el retrato según el interlocutor
+        Sprite foundPortrait = GetPortraitByName(speakerName);
+        if (foundPortrait != null)
+            speakerPortrait.sprite = foundPortrait;
+
         dialoguePanel.SetActive(true);
         isDialogueActive = true;
-        speakerPortrait = portrait;
 
         StartCoroutine(TypeText(text));
     }
@@ -82,9 +90,27 @@ public class InGameDialogue : MonoBehaviour
             playerController.enabled = true;
     }
 
-    // 🔹 Si querés reiniciar todos los diálogos (por ejemplo, al reiniciar nivel)
     public static void ResetDialogues()
     {
         shownDialogues.Clear();
     }
+
+    // 🔹 Busca el sprite del interlocutor según el nombre
+    private Sprite GetPortraitByName(string speakerName)
+    {
+        foreach (var p in portraits)
+        {
+            if (p.speakerName == speakerName)
+                return p.portraitSprite;
+        }
+        Debug.LogWarning($"Retrato no encontrado para '{speakerName}'.");
+        return null;
+    }
+}
+
+[System.Serializable]
+public class SpeakerPortrait
+{
+    public string speakerName;
+    public Sprite portraitSprite;
 }

@@ -1086,7 +1086,7 @@ MonoBehaviour:
   rescuedCitizenSFX: {fileID: 1856348897}
   deadCitizenSFX: {fileID: 309194489}
   citizens: 0
-  hasKnife: 1
+  hasKnife: 0
 --- !u!4 &81963510
 Transform:
   m_ObjectHideFlags: 0
@@ -2142,6 +2142,7 @@ MonoBehaviour:
   inGameDialogue: {fileID: 1603680429}
   sprite: {fileID: 723697910}
   dialogueID: D_4
+  portrait: 
   textoDelJefe: "Menos mal... me estaba volviendo loco. \xA1Y yo ni siquiera estoy
     dentro!"
 --- !u!61 &187579661
@@ -5884,6 +5885,7 @@ MonoBehaviour:
   inGameDialogue: {fileID: 1603680429}
   sprite: {fileID: 723697910}
   dialogueID: D_2
+  portrait: 
   textoDelJefe: "Perfecto, localizaste la salida. Rescata a los ciudadanos y escapa
     de all\xED."
 --- !u!1 &631386045
@@ -6541,7 +6543,7 @@ GameObject:
   - component: {fileID: 723697910}
   - component: {fileID: 723697912}
   m_Layer: 5
-  m_Name: Character
+  m_Name: Portrait
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28464,6 +28466,7 @@ MonoBehaviour:
   inGameDialogue: {fileID: 1603680429}
   sprite: {fileID: 723697910}
   dialogueID: D_5
+  portrait: 
   textoDelJefe: "\xA1Encontraste mis cigarrillos! \xA1Y nadie se ha fumado ninguno!
     \xA1Este es un gran gran d\xEDa! Te est\xE1s ganando tu sueldo muchacho... "
 --- !u!1 &1075599940
@@ -28512,8 +28515,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InGameDialogueTrigger
   inGameDialogue: {fileID: 1603680429}
-  sprite: {fileID: 0}
+  sprite: {fileID: 723697910}
   dialogueID: D_6
+  portrait: Ciudadano
   textoDelJefe: "\xA1Ey! \xA1S\xE9 que estoy en un lugar inconveniente, pero si me
     rescatas te dar\xE9 $300 extra adem\xE1s de lo que consigas por tu trabajo!"
 --- !u!61 &1075599943
@@ -30208,6 +30212,7 @@ MonoBehaviour:
   inGameDialogue: {fileID: 1603680429}
   sprite: {fileID: 723697910}
   dialogueID: D_3
+  portrait: Jefe
   textoDelJefe: "Esa alarma es insoportable. Ya est\xE1s all\xED as\xED que no tiene
     sentido que siga sonando. Debe haber un bot\xF3n para desactivarla."
 --- !u!61 &1182788528
@@ -34215,6 +34220,11 @@ MonoBehaviour:
   speakerPortrait: {fileID: 723697910}
   dialogueText: {fileID: 1188337516}
   typingSpeed: 0.03
+  portraits:
+  - speakerName: Jefe
+    portraitSprite: {fileID: -7298898629300636624, guid: e0865afb3e4afee4a916a574cb018917, type: 3}
+  - speakerName: Ciudadano
+    portraitSprite: {fileID: -991257273092804640, guid: 6181a3ad8804c4e48a729a4ffcc848f2, type: 3}
   playerController: {fileID: 1459027711}
 --- !u!4 &1603680430
 Transform:
@@ -46356,6 +46366,7 @@ MonoBehaviour:
   inGameDialogue: {fileID: 1603680429}
   sprite: {fileID: 723697910}
   dialogueID: D_1
+  portrait: Jefe
   textoDelJefe: "Un ciudadano en aprietos. Deber\xEDas buscar algo filoso con lo
     que cortar la cuerda... y mis cigarrillos."
 --- !u!61 &1702739245
@@ -46780,6 +46791,10 @@ PrefabInstance:
       propertyPath: interactionText
       value: 
       objectReference: {fileID: 946950222}
+    - target: {fileID: 478528766401478182, guid: bd93a81d96362544d99e4b1fb8204367, type: 3}
+      propertyPath: pointsIfCountsForMin
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 6186416286030763448, guid: bd93a81d96362544d99e4b1fb8204367, type: 3}
       propertyPath: m_LocalPosition.x
       value: 44.58
