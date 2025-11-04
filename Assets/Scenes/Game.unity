@@ -290,11 +290,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4177472097151577813, guid: 47cc0a926c7842440a27703460966733, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.25
+      value: 1.17
       objectReference: {fileID: 0}
     - target: {fileID: 4177472097151577813, guid: 47cc0a926c7842440a27703460966733, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.880001
+      value: 16.91
       objectReference: {fileID: 0}
     - target: {fileID: 4177472097151577813, guid: 47cc0a926c7842440a27703460966733, type: 3}
       propertyPath: m_LocalPosition.z
@@ -671,7 +671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4177472097151577813, guid: 47cc0a926c7842440a27703460966733, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.880001
+      value: 17.01
       objectReference: {fileID: 0}
     - target: {fileID: 4177472097151577813, guid: 47cc0a926c7842440a27703460966733, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1078,7 +1078,7 @@ MonoBehaviour:
   zonaVerde: {fileID: 1266326680}
   aguja: {fileID: 1461673662}
   velocidad: 200
-  aumentoVelocidad: 100
+  aumentoVelocidad: 50
   tiempoReinicio: 1.5
   greenZoneShrinkAmount: 20
   minGreenZoneWidth: 40
@@ -2142,7 +2142,7 @@ MonoBehaviour:
   inGameDialogue: {fileID: 1603680429}
   sprite: {fileID: 723697910}
   dialogueID: D_4
-  portrait: 
+  portrait: Jefe
   textoDelJefe: "Menos mal... me estaba volviendo loco. \xA1Y yo ni siquiera estoy
     dentro!"
 --- !u!61 &187579661
@@ -8680,7 +8680,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   rescuedCitizens: 0
   totalCitizens: 8
-  minCitizens: 1
+  minCitizens: 5
   deadCitizens: 0
   totalTime: 180
   rescuedCitizensText: {fileID: 1956639293}
@@ -28466,7 +28466,7 @@ MonoBehaviour:
   inGameDialogue: {fileID: 1603680429}
   sprite: {fileID: 723697910}
   dialogueID: D_5
-  portrait: 
+  portrait: Jefe
   textoDelJefe: "\xA1Encontraste mis cigarrillos! \xA1Y nadie se ha fumado ninguno!
     \xA1Este es un gran gran d\xEDa! Te est\xE1s ganando tu sueldo muchacho... "
 --- !u!1 &1075599940
@@ -53603,7 +53603,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4177472097151577813, guid: 47cc0a926c7842440a27703460966733, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.880001
+      value: 17.15
       objectReference: {fileID: 0}
     - target: {fileID: 4177472097151577813, guid: 47cc0a926c7842440a27703460966733, type: 3}
       propertyPath: m_LocalPosition.z
