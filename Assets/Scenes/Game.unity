@@ -603,7 +603,7 @@ Transform:
   m_GameObject: {fileID: 56631548}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 41.801052, y: -19.90009, z: -10}
+  m_LocalPosition: {x: 45.17105, y: -19.83009, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8587,7 +8587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2678112ec57cbd84b94f70f8f7c744d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CountdownTimer
-  startTime: 481.5
+  startTime: 3
   timerText: {fileID: 676683761}
   resetButton: {fileID: 1297019650}
   player: {fileID: 1459027710}
@@ -35854,7 +35854,7 @@ Transform:
   m_GameObject: {fileID: 1459027710}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.2, y: 22.2, z: 0}
+  m_LocalPosition: {x: 36.57, y: 22.27, z: 0}
   m_LocalScale: {x: 1.8, y: 1.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
