@@ -50,6 +50,11 @@ public class GameManager : MonoBehaviour
             totalTime += Time.deltaTime;
         }
 
+        if (rescuedCitizens >= 4)
+        {
+            InGameDialogue.Instance.TriggerDialogue("D_8", "Aún no me conoces, bombero cualquiera... pero ya lo harás... je je...", "Enemy");
+        }
+
         // Si alcanzó la cantidad mínima, puede salir
         if (rescuedCitizens >= minCitizens)
         {
@@ -58,7 +63,7 @@ public class GameManager : MonoBehaviour
             if (!isCutscenePlayed)
             {
                 camAnim.SetBool("Cutscene1", true);
-                Invoke(nameof(StopCutscene), 3f);
+                Invoke(nameof(StopCutscene), 5f);
                 isCutscenePlayed = true;
             }
         }
@@ -89,7 +94,9 @@ public class GameManager : MonoBehaviour
     {
         if (isCutscenePlayed)
             camAnim.SetBool("Cutscene1", false);
+        InGameDialogue.Instance.TriggerDialogue("D_7", "Así que quieres la tarjeta de crédito, ¿eh? Te estoy esperando... bombero cualquiera...", "Enemy");
     }
+
 
     // Llamá a este método cuando un ciudadano muera
     public void CitizenDead()

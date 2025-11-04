@@ -1086,7 +1086,7 @@ MonoBehaviour:
   rescuedCitizenSFX: {fileID: 1856348897}
   deadCitizenSFX: {fileID: 309194489}
   citizens: 0
-  hasKnife: 0
+  hasKnife: 1
 --- !u!4 &81963510
 Transform:
   m_ObjectHideFlags: 0
@@ -2140,9 +2140,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InGameDialogueTrigger
   inGameDialogue: {fileID: 1603680429}
-  sprite: {fileID: 723697910}
   dialogueID: D_4
-  portrait: Jefe
+  speakerName: 
   textoDelJefe: "Menos mal... me estaba volviendo loco. \xA1Y yo ni siquiera estoy
     dentro!"
 --- !u!61 &187579661
@@ -5883,9 +5882,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InGameDialogueTrigger
   inGameDialogue: {fileID: 1603680429}
-  sprite: {fileID: 723697910}
   dialogueID: D_2
-  portrait: 
+  speakerName: 
   textoDelJefe: "Perfecto, localizaste la salida. Rescata a los ciudadanos y escapa
     de all\xED."
 --- !u!1 &631386045
@@ -8680,7 +8678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   rescuedCitizens: 0
   totalCitizens: 8
-  minCitizens: 5
+  minCitizens: 3
   deadCitizens: 0
   totalTime: 180
   rescuedCitizensText: {fileID: 1956639293}
@@ -28464,9 +28462,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InGameDialogueTrigger
   inGameDialogue: {fileID: 1603680429}
-  sprite: {fileID: 723697910}
   dialogueID: D_5
-  portrait: Jefe
+  speakerName: 
   textoDelJefe: "\xA1Encontraste mis cigarrillos! \xA1Y nadie se ha fumado ninguno!
     \xA1Este es un gran gran d\xEDa! Te est\xE1s ganando tu sueldo muchacho... "
 --- !u!1 &1075599940
@@ -28515,9 +28512,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InGameDialogueTrigger
   inGameDialogue: {fileID: 1603680429}
-  sprite: {fileID: 723697910}
   dialogueID: D_6
-  portrait: Ciudadano
+  speakerName: 
   textoDelJefe: "\xA1Ey! \xA1S\xE9 que estoy en un lugar inconveniente, pero si me
     rescatas te dar\xE9 $300 extra adem\xE1s de lo que consigas por tu trabajo!"
 --- !u!61 &1075599943
@@ -30310,9 +30306,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InGameDialogueTrigger
   inGameDialogue: {fileID: 1603680429}
-  sprite: {fileID: 723697910}
   dialogueID: D_3
-  portrait: Jefe
+  speakerName: 
   textoDelJefe: "Esa alarma es insoportable. Ya est\xE1s all\xED as\xED que no tiene
     sentido que siga sonando. Debe haber un bot\xF3n para desactivarla."
 --- !u!61 &1182788528
@@ -34427,6 +34422,8 @@ MonoBehaviour:
     portraitSprite: {fileID: -7298898629300636624, guid: e0865afb3e4afee4a916a574cb018917, type: 3}
   - speakerName: Ciudadano
     portraitSprite: {fileID: -991257273092804640, guid: 6181a3ad8804c4e48a729a4ffcc848f2, type: 3}
+  - speakerName: Enemy
+    portraitSprite: {fileID: -1763522034412010665, guid: 095e7405498b8604d9830f67d2964c5a, type: 3}
   playerController: {fileID: 1459027711}
 --- !u!4 &1603680430
 Transform:
@@ -46566,9 +46563,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   inGameDialogue: {fileID: 1603680429}
-  sprite: {fileID: 723697910}
   dialogueID: D_1
-  portrait: Jefe
+  speakerName: 
   textoDelJefe: "Un ciudadano en aprietos. Deber\xEDas buscar algo filoso con lo
     que cortar la cuerda... y mis cigarrillos."
 --- !u!61 &1702739245

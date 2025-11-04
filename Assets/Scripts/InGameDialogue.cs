@@ -25,6 +25,13 @@ public class InGameDialogue : MonoBehaviour
     private bool isDialogueActive = false;
     private bool isTyping = false;
 
+    public static InGameDialogue Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     void Start()
     {
         dialoguePanel.SetActive(false);
