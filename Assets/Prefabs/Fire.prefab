@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8210502260e3e64c8cd289a54cf4669, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FireTarget
-  extinguishTime: 0.1
+  extinguishTime: 0.05
   reigniteDelay: 15
   timeToDamage: 2
   currentTimeToDamage: 0
