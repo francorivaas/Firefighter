@@ -32,6 +32,8 @@ public class RescueMinigame : MonoBehaviour
 
     public bool hasKnife;
 
+    public Animator citizenCounterAnimator;
+
     void Start()
     {
         citizens = 0;
@@ -85,6 +87,7 @@ public class RescueMinigame : MonoBehaviour
             velocidad += aumentoVelocidad;
             rescuedCitizenSFX.Play();
             GameManager.Instance.rescuedCitizens++;
+            citizenCounterAnimator.SetTrigger("CitizenRescued");
             ScoreManager.Instance.AddPoints(currentCitizen.pointsIfCountsForMin);
         }
         else

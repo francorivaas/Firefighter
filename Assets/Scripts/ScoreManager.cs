@@ -12,6 +12,8 @@ public class ScoreManager : MonoBehaviour
     [Header("UI")]
     public Text hudScoreText;                // si usás Unity UI Text
 
+    public Animator moneyCounterAnimator;
+
     void Awake()
     {
         if (Instance == null)
@@ -35,6 +37,7 @@ public class ScoreManager : MonoBehaviour
     public void AddPoints(int points)
     {
         currentScore += points;
+        moneyCounterAnimator.SetTrigger("MoneyGained");
         UpdateHUD();
     }
 
@@ -46,6 +49,7 @@ public class ScoreManager : MonoBehaviour
 
     void UpdateHUD()
     {
+        
         if (hudScoreText != null)
             hudScoreText.text = "Dinero extra: $" + currentScore.ToString();
     }
