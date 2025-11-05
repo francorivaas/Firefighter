@@ -46,6 +46,16 @@ public class Health : MonoBehaviour
         PlayRandomDamageSound();
     }
 
+    public void Heal(float amount)
+    {
+        currentHealth += amount;
+        onHealthChanged.Invoke(currentHealth, maxHealth);
+        if (currentHealth >= maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+    }
+
     void PlayRandomDamageSound()
     {
         if (damageSounds.Length == 0 || audioSource == null) return;
