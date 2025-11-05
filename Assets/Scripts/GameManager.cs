@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = false;
         isCutscenePlayed = false;
         transition.SetActive(true);
     }
