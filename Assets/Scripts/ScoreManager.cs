@@ -47,7 +47,7 @@ public class ScoreManager : MonoBehaviour
     void UpdateHUD()
     {
         if (hudScoreText != null)
-            hudScoreText.text = "Dinero extra: " + currentScore.ToString();
+            hudScoreText.text = "Dinero extra: $" + currentScore.ToString();
     }
 
     // Método útil para que VictoryScreen lea el puntaje final

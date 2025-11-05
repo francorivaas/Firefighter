@@ -47,7 +47,6 @@ public class GameManager : MonoBehaviour
             InGameDialogue.Instance.TriggerDialogue("D_8", "Aún no me conoces, bombero cualquiera... pero ya lo harás... je je...", "Enemy");
         }
 
-        // Si alcanzó la cantidad mínima, puede salir
         if (rescuedCitizens >= minCitizens)
         {
             door.gameObject.SetActive(false);
@@ -60,8 +59,6 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        // 🔥 NUEVA LÓGICA DE DERROTA 🔥
-        // Si el número de ciudadanos restantes vivos no alcanza para llegar al mínimo → derrota
         int remainingCitizens = totalCitizens - (rescuedCitizens + deadCitizens);
         if (rescuedCitizens + remainingCitizens < minCitizens)
         {
@@ -69,14 +66,17 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(2); // o el nombre que uses para la escena de derrota
         }
 
-        // Actualizar UI
+        if (rescuedCitizens == totalCitizens)
+        {
+            InGameDialogue.Instance.TriggerDialogue("D_11", "¡Los has rescatado a todos!", "Jefe");
+        }
+
         if (rescuedCitizensText != null)
         {
             rescuedCitizensText.text = "Ciudadanos: " + rescuedCitizens + "/" + totalCitizens;
         }
     }
 
-    // Llamá a este método cuando un ciudadano sea rescatado
     public void CitizenRescued()
     {
         rescuedCitizens++;
@@ -89,14 +89,11 @@ public class GameManager : MonoBehaviour
         InGameDialogue.Instance.TriggerDialogue("D_7", "Así que quieres la tarjeta de crédito, ¿eh? Te estoy esperando... bombero cualquiera...", "Enemy");
     }
 
-
-    // Llamá a este método cuando un ciudadano muera
     public void CitizenDead()
     {
         deadCitizens++;
     }
 
-    // Reiniciar datos al volver a jugar
     public void ReiniciarDatos()
     {
         rescuedCitizens = 0;

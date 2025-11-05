@@ -434,8 +434,9 @@ MonoBehaviour:
     text: "\xBFCu\xE1l es el estado de la misi\xF3n?"
     portrait: {fileID: -7298898629300636624, guid: e0865afb3e4afee4a916a574cb018917, type: 3}
   - speakerName: Un jefe molesto
-    text: "Han atacado el centro comercial y hay 8 civiles en peligro. Adem\xE1s
-      he perdido mi paquete de cigarrillos y tarjeta de cr\xE9dito dentro."
+    text: "Un tipo sospechoso ha atacado el centro comercial y hay 8 civiles en peligro.
+      Adem\xE1s he perdido mi paquete de cigarrillos y tarjeta de cr\xE9dito dentro...
+      sospechosamente..."
     portrait: {fileID: -7298898629300636624, guid: e0865afb3e4afee4a916a574cb018917, type: 3}
   - speakerName: Un jefe molesto
     text: "Creo que la prioridad est\xE1 m\xE1s que clara, \xBFno bombero?"
@@ -446,7 +447,7 @@ MonoBehaviour:
     portrait: {fileID: 7228157715516960518, guid: 75c46edcf14e9e749a4b286ddfa8d464, type: 3}
   - speakerName: Un jefe molesto
     text: "Exacto. Sin embargo, para que la misi\xF3n sea un \xE9xito solamente es
-      necesario rescatar a los 8 civiles... o al menos 5 de ellos."
+      necesario rescatar a los 8 civiles... o al menos 6 de ellos."
     portrait: {fileID: -7298898629300636624, guid: e0865afb3e4afee4a916a574cb018917, type: 3}
   - speakerName: Un bombero cualquiera
     text: Todo claro, jefe.
