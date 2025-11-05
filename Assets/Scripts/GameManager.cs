@@ -12,9 +12,6 @@ public class GameManager : MonoBehaviour
     public int minCitizens = 0;       // Cuántos se necesitan rescatar para ganar
     public int deadCitizens = 0;      // Cuántos murieron
 
-    [Header("Tiempo total")]
-    public float totalTime = 0f;
-
     [Header("UI")]
     public Text rescuedCitizensText;
 
@@ -44,12 +41,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        // Aumenta el tiempo solo si no estás en la escena de victoria
-        if (!SceneManager.GetActiveScene().name.Contains("Victoria"))
-        {
-            totalTime += Time.deltaTime;
-        }
-
         if (rescuedCitizens >= 4)
         {
             InGameDialogue.Instance.TriggerDialogue("D_8", "Aún no me conoces, bombero cualquiera... pero ya lo harás... je je...", "Enemy");
@@ -109,6 +100,5 @@ public class GameManager : MonoBehaviour
     {
         rescuedCitizens = 0;
         deadCitizens = 0;
-        totalTime = 0f;
     }
 }
