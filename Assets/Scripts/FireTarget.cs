@@ -22,6 +22,8 @@ public class FireTarget : MonoBehaviour
     public AudioClip burstSfx;
     public AudioClip extinguishSfx;
 
+    public GameObject light;
+
     void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -57,6 +59,7 @@ public class FireTarget : MonoBehaviour
         if (animator != null)
             animator.SetBool("Extinguish", true);
         GetComponent<Collider2D>().enabled = false;
+        light.SetActive(false);
         Invoke(nameof(Reignite), reigniteDelay);
     }
 
@@ -67,6 +70,7 @@ public class FireTarget : MonoBehaviour
         Animator animator = GetComponent<Animator>();
         if (animator != null)
             animator.SetBool("Extinguish", false);
+        light.SetActive(true);
         GetComponent<Collider2D>().enabled = true;
     }
 
