@@ -29,12 +29,15 @@ public class EnemyCoverShooter : MonoBehaviour
 
     private bool isCovered = true;
     private bool isShooting = false;
+    public bool isDead = false;
     private bool isActive = false; // ⬅️ Nuevo: el enemigo no actúa hasta ser activado
 
     public GameObject lifebar;
     public AudioSource audioSrc;
+    public AudioSource bossMusic;
     public AudioClip shootingSFX;
     public AudioClip getDamageSFX;
+    public AudioClip victorySFX;
 
     private SpriteRenderer spriteRenderer;
     public Sprite sprite;
@@ -44,6 +47,7 @@ public class EnemyCoverShooter : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         currentHealth = maxHealth;
         onHealthChanged.Invoke(currentHealth, maxHealth);
+        isDead = false;
     }
 
     public void ActivateEnemy()
@@ -121,12 +125,14 @@ public class EnemyCoverShooter : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
+            bossMusic.Stop();
         }
     }
 
     [System.Obsolete]
     void Die()
     {
+        audioSrc.PlayOneShot(victorySFX);
         spriteRenderer.sprite = sprite;
         InGameDialogue.Instance.TriggerDialogue("D_12", "Es increible que me hayas derrotado... siendo.. un... bombero cualquiera...", "DeadEnemy");
         Destroy(lifebar);
