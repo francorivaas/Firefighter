@@ -360,7 +360,7 @@ Transform:
   m_GameObject: {fileID: 56631548}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.59895, y: 54.79991, z: -10}
+  m_LocalPosition: {x: -16.29895, y: 64.19991, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -29507,6 +29507,7 @@ MonoBehaviour:
   audioSrc: {fileID: 1150464706}
   shootingSFX: {fileID: 8300000, guid: 2bc863149ef69b24c927f2d2e321d8c8, type: 3}
   getDamageSFX: {fileID: 8300000, guid: 3f0bcb6215b52dd4e8ca8696a2afcdea, type: 3}
+  sprite: {fileID: 2613816482194114975, guid: c4da8c19f4c92be4ba09850473ce869a, type: 3}
 --- !u!61 &1150464705
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29545,7 +29546,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8, y: 1.14}
+    oldSize: {x: 1, y: 1.425}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -31770,7 +31771,7 @@ Transform:
   m_GameObject: {fileID: 1459027710}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.2, y: 96.9, z: 0}
+  m_LocalPosition: {x: -24.9, y: 106.3, z: 0}
   m_LocalScale: {x: 1.8, y: 1.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -33203,6 +33204,8 @@ MonoBehaviour:
     portraitSprite: {fileID: -991257273092804640, guid: 6181a3ad8804c4e48a729a4ffcc848f2, type: 3}
   - speakerName: Enemy
     portraitSprite: {fileID: -1763522034412010665, guid: 095e7405498b8604d9830f67d2964c5a, type: 3}
+  - speakerName: DeadEnemy
+    portraitSprite: {fileID: -6457251009103254847, guid: 2945777557f7b4148ae3aeecc659b7e2, type: 3}
   playerController: {fileID: 1459027711}
 --- !u!4 &1603680430
 Transform:

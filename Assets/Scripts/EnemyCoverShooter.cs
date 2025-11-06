@@ -36,8 +36,12 @@ public class EnemyCoverShooter : MonoBehaviour
     public AudioClip shootingSFX;
     public AudioClip getDamageSFX;
 
+    private SpriteRenderer spriteRenderer;
+    public Sprite sprite;
+
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         currentHealth = maxHealth;
         onHealthChanged.Invoke(currentHealth, maxHealth);
     }
@@ -123,7 +127,8 @@ public class EnemyCoverShooter : MonoBehaviour
     [System.Obsolete]
     void Die()
     {
-        InGameDialogue.Instance.TriggerDialogue("D_12", "Es increible que me hayas derrotado... siendo.. un... bombero cualquiera...", "Enemy");
+        spriteRenderer.sprite = sprite;
+        InGameDialogue.Instance.TriggerDialogue("D_12", "Es increible que me hayas derrotado... siendo.. un... bombero cualquiera...", "DeadEnemy");
         Destroy(lifebar);
         StopAllCoroutines();
 
@@ -134,6 +139,8 @@ public class EnemyCoverShooter : MonoBehaviour
             playerGun.RemoveGun();
         }
 
-        Destroy(gameObject);
+        isActive = false;
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null) col.enabled = false;
     }
 }

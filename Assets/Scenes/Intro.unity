@@ -427,34 +427,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   lineas:
-  - speakerName: Un bombero cualquiera
-    text: "\xA1Jefe, o\xED la alarma!"
-    portrait: {fileID: -5131272038064551317, guid: 7bb44af0e30c7614a8e895c4ee5726d8, type: 3}
-  - speakerName: Un bombero cualquiera
-    text: "\xBFCu\xE1l es el estado de la misi\xF3n?"
+  - speakerName: Un jefe molesto
+    text: "\xA1Finalmente lleg\xF3, bombero cualquiera!"
     portrait: {fileID: -7298898629300636624, guid: e0865afb3e4afee4a916a574cb018917, type: 3}
   - speakerName: Un jefe molesto
-    text: "Un tipo sospechoso ha atacado el centro comercial y hay 8 civiles en peligro.
-      Adem\xE1s he perdido mi paquete de cigarrillos y tarjeta de cr\xE9dito dentro...
-      sospechosamente..."
+    text: "Me imagino que est\xE1 ansioso por escuchar el reporte de la misi\xF3n."
+    portrait: {fileID: -7298898629300636624, guid: e0865afb3e4afee4a916a574cb018917, type: 3}
+  - speakerName: Un bombero cualquiera
+    text: ...
+    portrait: {fileID: -7298898629300636624, guid: e0865afb3e4afee4a916a574cb018917, type: 3}
+  - speakerName: Un jefe molesto
+    text: "\xA1Lo sab\xEDa! Un tipo sospechoso ha atacado el centro comercial y hay
+      8 civiles en peligro. Adem\xE1s he perdido mi paquete de cigarrillos y tarjeta
+      de cr\xE9dito dentro... sospechosamente..."
     portrait: {fileID: -7298898629300636624, guid: e0865afb3e4afee4a916a574cb018917, type: 3}
   - speakerName: Un jefe molesto
     text: "Creo que la prioridad est\xE1 m\xE1s que clara, \xBFno bombero?"
     portrait: {fileID: -7298898629300636624, guid: e0865afb3e4afee4a916a574cb018917, type: 3}
   - speakerName: Un bombero cualquiera
-    text: "Usted no ser\xEDa el mismo sin sus cigarrillos. Y no podr\xE1 comprar
-      otros sin su tarjeta de cr\xE9dito."
+    text: ...
     portrait: {fileID: 7228157715516960518, guid: 75c46edcf14e9e749a4b286ddfa8d464, type: 3}
   - speakerName: Un jefe molesto
-    text: "Exacto. Sin embargo, para que la misi\xF3n sea un \xE9xito solamente es
-      necesario rescatar a los 8 civiles... o al menos 6 de ellos."
+    text: "Bien... claramente mis cigarrillos y tarjeta de cr\xE9dito son la prioridad...
+      aunque la misi\xF3n no ser\xE1 considerada un \xE9xito si no rescatas al menos
+      6 de los 8 ciudadanos en apuros."
     portrait: {fileID: -7298898629300636624, guid: e0865afb3e4afee4a916a574cb018917, type: 3}
   - speakerName: Un bombero cualquiera
-    text: Todo claro, jefe.
+    text: ...
     portrait: {fileID: -5131272038064551317, guid: 7bb44af0e30c7614a8e895c4ee5726d8, type: 3}
   - speakerName: Un jefe molesto
     text: "Muero por un cigarrillo. Lo bueno es que el edificio est\xE1 en llamas,
       por lo que no necesitar\xE9 encendedor."
+    portrait: {fileID: -7298898629300636624, guid: e0865afb3e4afee4a916a574cb018917, type: 3}
+  - speakerName: Un jefe molesto
+    text: "Hablas demasiado para ser un simple bombero. M\xE9tete en ese edificio
+      y rescata mis cigarrillos... \xA1digo a los civiles antes de que sea demasiado
+      tarde!"
     portrait: {fileID: -7298898629300636624, guid: e0865afb3e4afee4a916a574cb018917, type: 3}
 --- !u!4 &1070456916
 Transform:
@@ -1290,12 +1298,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
