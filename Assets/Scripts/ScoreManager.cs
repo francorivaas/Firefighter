@@ -19,9 +19,8 @@ public class ScoreManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            // No DontDestroyOnLoad por defecto; si querés persistir entre escenas, activalo
-            // DontDestroyOnLoad(gameObject);
         }
+
         else
         {
             Destroy(gameObject);
@@ -49,18 +48,15 @@ public class ScoreManager : MonoBehaviour
 
     void UpdateHUD()
     {
-        
         if (hudScoreText != null)
             hudScoreText.text = "Dinero extra: $" + currentScore.ToString();
     }
 
-    // Método útil para que VictoryScreen lea el puntaje final
     public int GetFinalScore()
     {
         return currentScore;
     }
 
-    // Reseteo (ej.: al reiniciar nivel)
     public void ResetScore()
     {
         currentScore = 0;

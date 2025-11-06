@@ -14,7 +14,6 @@ public class Health : MonoBehaviour
     public AudioClip[] damageSounds;         // Lista de gritos o sonidos de daño
     [Range(0f, 1f)] public float volume = 0.8f;
 
-    // Evento opcional para avisar a la barra
     public UnityEvent<float, float> onHealthChanged;
     public CountdownTimer timer;
 
@@ -32,7 +31,7 @@ public class Health : MonoBehaviour
         {
             Destroy(gameObject);
             GameManager.Instance.ReiniciarDatos();
-            SceneManager.LoadScene(2); // Escena de derrota
+            SceneManager.LoadScene(2);
         }
     }
 
@@ -60,11 +59,9 @@ public class Health : MonoBehaviour
     {
         if (damageSounds.Length == 0 || audioSource == null) return;
 
-        // Elegir un sonido al azar
         int randomIndex = Random.Range(0, damageSounds.Length);
         AudioClip clip = damageSounds[randomIndex];
 
-        // Reproducir el sonido
         audioSource.PlayOneShot(clip, volume);
     }
 }

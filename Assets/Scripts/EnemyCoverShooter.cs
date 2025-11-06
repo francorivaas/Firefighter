@@ -120,8 +120,10 @@ public class EnemyCoverShooter : MonoBehaviour
         }
     }
 
+    [System.Obsolete]
     void Die()
     {
+        InGameDialogue.Instance.TriggerDialogue("D_12", "Es increible que me hayas derrotado... siendo.. un... bombero cualquiera...", "Enemy");
         Destroy(lifebar);
         StopAllCoroutines();
 

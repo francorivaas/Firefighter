@@ -360,7 +360,7 @@ Transform:
   m_GameObject: {fileID: 56631548}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.161051, y: -44.45009, z: -10}
+  m_LocalPosition: {x: -12.59895, y: 54.79991, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -29498,7 +29498,7 @@ MonoBehaviour:
   maxBulletsPerBurst: 7
   fireRate: 0.2
   bulletSpeed: 15
-  maxHealth: 800
+  maxHealth: 1
   currentHealth: 0
   onHealthChanged:
     m_PersistentCalls:
@@ -31770,7 +31770,7 @@ Transform:
   m_GameObject: {fileID: 1459027710}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.56, y: -2.35, z: 0}
+  m_LocalPosition: {x: -21.2, y: 96.9, z: 0}
   m_LocalScale: {x: 1.8, y: 1.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

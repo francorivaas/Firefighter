@@ -7,17 +7,19 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [Header("Datos del progreso")]
-    public int rescuedCitizens = 0;   // Cuántos fueron rescatados
-    public int totalCitizens = 0;     // Cuántos había en total
-    public int minCitizens = 0;       // Cuántos se necesitan rescatar para ganar
-    public int deadCitizens = 0;      // Cuántos murieron
+    public int rescuedCitizens = 0;   
+    public int totalCitizens = 0;     
+    public int minCitizens = 0;       
+    public int deadCitizens = 0;      
 
     [Header("UI")]
     public Text rescuedCitizensText;
 
     public GameObject transition;
     public GameObject door;
+
     public Animator camAnim;
+
     public bool isCutscenePlayed;
 
     private void Awake()
@@ -27,6 +29,7 @@ public class GameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
+
         else
         {
             Destroy(gameObject);
@@ -62,7 +65,6 @@ public class GameManager : MonoBehaviour
         int remainingCitizens = totalCitizens - (rescuedCitizens + deadCitizens);
         if (rescuedCitizens + remainingCitizens < minCitizens)
         {
-            print("❌ Ya no puedes alcanzar el mínimo. Derrota.");
             SceneManager.LoadScene(2); // o el nombre que uses para la escena de derrota
         }
 
