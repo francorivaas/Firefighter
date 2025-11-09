@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -9,66 +9,75 @@ public class CountdownTimer : MonoBehaviour
     public float startTime = 60f;
 
     [Header("UI")]
-    public Text timerText;      // Texto donde mostrar el tiempo
-    public Button resetButton;  // Botón para reiniciar
+    public Text timerText;
+    public Button resetButton;
 
     private float currentTime;
     private bool timerActive = true;
 
     public GameObject player;
 
+    private AudioSource audioSrc;
+    public AudioClip tickSfx;
+
+    // Ãºltimo segundo entero mostrado (ej: 59, 58, 57...)
+    private int lastSecondDisplayed;
+
     void Start()
     {
         currentTime = startTime;
+        audioSrc = GetComponent<AudioSource>();
 
-        // Ocultar botón al inicio
         if (resetButton != null)
             resetButton.gameObject.SetActive(false);
+
+        // Mostrar tiempo inicial
+        UpdateTimerText();
+
+        // Inicializar referencia del primer segundo entero
+        lastSecondDisplayed = Mathf.CeilToInt(currentTime);
+
+        // ðŸ”Š Reproducir primer tic inmediatamente
+        PlayTick();
     }
 
     void Update()
     {
         if (!timerActive) return;
 
-        // Decrementar tiempo
         currentTime -= Time.deltaTime;
+        if (currentTime < 0f) currentTime = 0f;
 
-        // Mostrar en UI
-        if (timerText != null)
+        UpdateTimerText();
+
+        // Detectar cambio de segundo entero
+        int currentSecond = Mathf.CeilToInt(currentTime);
+        if (currentSecond != lastSecondDisplayed)
         {
-            int minutes = Mathf.FloorToInt(currentTime / 60);
-            int seconds = Mathf.FloorToInt(currentTime % 60);
-            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            lastSecondDisplayed = currentSecond;
+            PlayTick();
         }
 
-        // Tiempo agotado
+        // Cuando termina el tiempo
         if (currentTime <= 0f)
         {
-            currentTime = 0f;
             timerActive = false;
             SceneManager.LoadScene(2);
             Destroy(player);
-
-            //// Mostrar botón de reset
-            //if (resetButton != null)
-            //{
-            //    EnableResetButton();
-            //}
         }
     }
 
-    //public void EnableResetButton()
-    //{
-    //    resetButton.gameObject.SetActive(true);
-    //    resetButton.onClick.RemoveAllListeners();
-    //    resetButton.onClick.AddListener(ResetScene);
-    //}
+    private void PlayTick()
+    {
+        if (tickSfx != null && audioSrc != null)
+            audioSrc.PlayOneShot(tickSfx);
+    }
 
-    //public void ResetScene()
-    //{
-    //    GameManager.Instance.ReiniciarDatos();
-    //    Scene currentScene = SceneManager.GetActiveScene();
-    //    SceneManager.LoadScene(currentScene.name);
-    //}
+    private void UpdateTimerText()
+    {
+        if (timerText == null) return;
+        int minutes = Mathf.FloorToInt(currentTime / 60f);
+        int seconds = Mathf.FloorToInt(currentTime % 60f);
+        timerText.text = $"{minutes:00}:{seconds:00}";
+    }
 }
-
