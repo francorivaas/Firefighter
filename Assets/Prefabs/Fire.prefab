@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FireTarget
   extinguishTime: 0.05
-  reigniteDelay: 15
+  reigniteDelay: 5
   timeToDamage: 2
   currentTimeToDamage: 0
   damage: 10
