@@ -107,7 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBullet
   speed: 10
   lifetime: 10
-  damage: 15
+  damage: 10
   impactEffect: {fileID: 0}
 --- !u!58 &1606265678394532107
 CircleCollider2D:
