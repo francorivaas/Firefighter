@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBullet
   speed: 10
-  lifetime: 5
+  lifetime: 10
   damage: 15
   impactEffect: {fileID: 0}
 --- !u!58 &1606265678394532107

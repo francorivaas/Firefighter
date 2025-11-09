@@ -25,11 +25,6 @@ public class EnemyBullet : MonoBehaviour
         transform.Translate(direction * speed * Time.deltaTime);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -48,6 +43,14 @@ public class EnemyBullet : MonoBehaviour
 
 
         else if (collision.CompareTag("Cover"))
+        {
+            if (impactEffect != null)
+                Instantiate(impactEffect, transform.position, Quaternion.identity);
+
+            Destroy(gameObject);
+        }
+
+        else if (collision.CompareTag("Walls"))
         {
             if (impactEffect != null)
                 Instantiate(impactEffect, transform.position, Quaternion.identity);

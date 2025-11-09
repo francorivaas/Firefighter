@@ -37,5 +37,10 @@ public class PlayerBullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        else if (collision.CompareTag("Walls"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
