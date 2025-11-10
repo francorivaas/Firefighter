@@ -27,6 +27,11 @@ public class InGameDialogue : MonoBehaviour
 
     public static InGameDialogue Instance;
 
+    public bool isEnemy;
+    public GameObject lifeBar;
+    public GameObject citizenCounter;
+    public GameObject moneyCounter;
+
     private void Awake()
     {
         Instance = this;
@@ -44,6 +49,12 @@ public class InGameDialogue : MonoBehaviour
             if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
             {
                 CloseDialogue();
+
+                lifeBar.SetActive(true);
+                citizenCounter.SetActive(true);
+                moneyCounter.SetActive(true);
+                isEnemy = false;
+                
             }
         }
     }
@@ -72,6 +83,13 @@ public class InGameDialogue : MonoBehaviour
         isDialogueActive = true;
 
         StartCoroutine(TypeText(text));
+
+        if (isEnemy)
+        {
+            lifeBar.SetActive(false);
+            citizenCounter.SetActive(false);
+            moneyCounter.SetActive(false);
+        }
     }
 
     IEnumerator TypeText(string text)

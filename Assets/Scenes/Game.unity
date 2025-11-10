@@ -19579,6 +19579,7 @@ MonoBehaviour:
   door: {fileID: 2014221264}
   camAnim: {fileID: 1969794877}
   isCutscenePlayed: 0
+  inGameDialogue: {fileID: 0}
 --- !u!4 &1009021662
 Transform:
   m_ObjectHideFlags: 0
@@ -64640,6 +64641,10 @@ MonoBehaviour:
   - speakerName: DeadEnemy
     portraitSprite: {fileID: -6457251009103254847, guid: 2945777557f7b4148ae3aeecc659b7e2, type: 3}
   playerController: {fileID: 1459027711}
+  isEnemy: 0
+  lifeBar: {fileID: 1754174257}
+  citizenCounter: {fileID: 1956639291}
+  moneyCounter: {fileID: 2140069146}
 --- !u!4 &1603680430
 Transform:
   m_ObjectHideFlags: 0

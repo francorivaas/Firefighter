@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
 
     public bool isCutscenePlayed;
 
+    public InGameDialogue inGameDialogue;
+
     private void Awake()
     {
         if (Instance == null)
@@ -47,6 +49,7 @@ public class GameManager : MonoBehaviour
     {
         if (rescuedCitizens >= 4)
         {
+            InGameDialogue.Instance.isEnemy = true;
             InGameDialogue.Instance.TriggerDialogue("D_8", "Aún no me conoces, bombero cualquiera... pero ya lo harás... je je...", "Enemy");
         }
 
