@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Cursor.visible = false;
+        //Cursor.visible = false;
         isCutscenePlayed = false;
         transition.SetActive(true);
     }

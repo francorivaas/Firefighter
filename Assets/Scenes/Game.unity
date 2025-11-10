@@ -19252,7 +19252,6 @@ MonoBehaviour:
   timerText: {fileID: 676683761}
   resetButton: {fileID: 1297019650}
   player: {fileID: 1459027710}
-  tickSfx: {fileID: 8300000, guid: 724f43f9e806eb647bea2cffd0cb17f8, type: 3}
 --- !u!4 &961519195
 Transform:
   m_ObjectHideFlags: 0
@@ -19275,7 +19274,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961519193}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}

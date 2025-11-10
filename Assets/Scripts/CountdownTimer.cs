@@ -17,16 +17,12 @@ public class CountdownTimer : MonoBehaviour
 
     public GameObject player;
 
-    private AudioSource audioSrc;
-    public AudioClip tickSfx;
-
     // último segundo entero mostrado (ej: 59, 58, 57...)
     private int lastSecondDisplayed;
 
     void Start()
     {
         currentTime = startTime;
-        audioSrc = GetComponent<AudioSource>();
 
         if (resetButton != null)
             resetButton.gameObject.SetActive(false);
@@ -37,8 +33,6 @@ public class CountdownTimer : MonoBehaviour
         // Inicializar referencia del primer segundo entero
         lastSecondDisplayed = Mathf.CeilToInt(currentTime);
 
-        // 🔊 Reproducir primer tic inmediatamente
-        PlayTick();
     }
 
     void Update()
@@ -55,7 +49,6 @@ public class CountdownTimer : MonoBehaviour
         if (currentSecond != lastSecondDisplayed)
         {
             lastSecondDisplayed = currentSecond;
-            PlayTick();
         }
 
         // Cuando termina el tiempo
@@ -65,12 +58,6 @@ public class CountdownTimer : MonoBehaviour
             SceneManager.LoadScene(2);
             Destroy(player);
         }
-    }
-
-    private void PlayTick()
-    {
-        if (tickSfx != null && audioSrc != null)
-            audioSrc.PlayOneShot(tickSfx);
     }
 
     private void UpdateTimerText()
