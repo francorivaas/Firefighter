@@ -49,7 +49,7 @@ public class ScoreManager : MonoBehaviour
     void UpdateHUD()
     {
         if (hudScoreText != null)
-            hudScoreText.text = "Dinero extra: $" + currentScore.ToString();
+            hudScoreText.text = "$" + currentScore.ToString();
     }
 
     public int GetFinalScore()
