@@ -49,12 +49,6 @@ public class InGameDialogue : MonoBehaviour
             if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
             {
                 CloseDialogue();
-
-                lifeBar.SetActive(true);
-                citizenCounter.SetActive(true);
-                moneyCounter.SetActive(true);
-                isEnemy = false;
-                
             }
         }
     }
@@ -84,12 +78,11 @@ public class InGameDialogue : MonoBehaviour
 
         StartCoroutine(TypeText(text));
 
-        if (isEnemy)
-        {
-            lifeBar.SetActive(false);
-            citizenCounter.SetActive(false);
-            moneyCounter.SetActive(false);
-        }
+
+        lifeBar.SetActive(false);
+        citizenCounter.SetActive(false);
+        moneyCounter.SetActive(false);
+        
     }
 
     IEnumerator TypeText(string text)
@@ -113,6 +106,11 @@ public class InGameDialogue : MonoBehaviour
 
         if (playerController != null)
             playerController.enabled = true;
+
+        lifeBar.SetActive(true);
+        citizenCounter.SetActive(true);
+        moneyCounter.SetActive(true);
+        isEnemy = false;
     }
 
     public static void ResetDialogues()
