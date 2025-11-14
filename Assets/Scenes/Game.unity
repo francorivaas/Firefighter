@@ -63345,6 +63345,8 @@ MonoBehaviour:
     m_Bits: 8
   water: {fileID: 2021835466}
   gunShooter: {fileID: 1459027718}
+  hoseAudio: {fileID: 1459027722}
+  hoseClip: {fileID: 8300000, guid: 6a18b207e78308c4d8cec20a0533ba49, type: 3}
 --- !u!114 &1459027717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63516,7 +63518,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
