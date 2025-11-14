@@ -14,11 +14,12 @@ public class CountdownTimer : MonoBehaviour
 
     private float currentTime;
     private bool timerActive = true;
+    private int lastSecondDisplayed;
 
     public GameObject player;
 
-    // último segundo entero mostrado (ej: 59, 58, 57...)
-    private int lastSecondDisplayed;
+    // 🔹 Variable estática para guardar el tiempo final
+    public static float finalTimeTaken = 0f;
 
     void Start()
     {
@@ -27,12 +28,8 @@ public class CountdownTimer : MonoBehaviour
         if (resetButton != null)
             resetButton.gameObject.SetActive(false);
 
-        // Mostrar tiempo inicial
         UpdateTimerText();
-
-        // Inicializar referencia del primer segundo entero
         lastSecondDisplayed = Mathf.CeilToInt(currentTime);
-
     }
 
     void Update()
@@ -44,17 +41,19 @@ public class CountdownTimer : MonoBehaviour
 
         UpdateTimerText();
 
-        // Detectar cambio de segundo entero
         int currentSecond = Mathf.CeilToInt(currentTime);
         if (currentSecond != lastSecondDisplayed)
         {
             lastSecondDisplayed = currentSecond;
         }
 
-        // Cuando termina el tiempo
         if (currentTime <= 0f)
         {
             timerActive = false;
+
+            // 🔹 Guardamos cuánto tiempo tardó (tiempo inicial - tiempo restante)
+            finalTimeTaken = startTime - currentTime;
+
             SceneManager.LoadScene(2);
             Destroy(player);
         }
